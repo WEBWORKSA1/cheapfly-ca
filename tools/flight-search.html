@@ -1,0 +1,37 @@
+---
+layout: tool
+title: "Multi-Engine Flight Search"
+crumb: "Flight search"
+icon: search
+permalink: /tools/flight-search/
+description: "Search cheap flights from Canada on Google Flights, Skyscanner, KAYAK, Expedia and Momondo from one form. Compare engines in one click, with no booking fees."
+lead: "Enter your trip once, open it on the engine you prefer, then compare the same search on four others in one click."
+faq:
+  - q: "Does CheapFly sell tickets?"
+    a: "No. The search opens on the site you choose, and you book directly with that site or the airline. CheapFly never adds a booking fee."
+  - q: "Which search engine is cheapest?"
+    a: "None is always cheapest. Google Flights is fastest for exploring dates, while Skyscanner, KAYAK and Momondo sometimes surface online travel agencies with lower prices. Comparing two or three is the habit that saves money."
+  - q: "Can I search to anywhere?"
+    a: "Yes. Leave the To field empty and the search opens in explore mode on engines that support it, which is ideal when you care more about price than destination."
+  - q: "Why should I book directly with the airline?"
+    a: "When the price is equal or close, booking direct usually makes changes, refunds and passenger-rights claims simpler because you deal with one company."
+---
+<div class="tool" style="grid-template-columns:1fr">
+  <div class="tool__panel">
+    {% include search-widget.html id="-tool" %}
+  </div>
+</div>
+<div class="prose prose--page">
+  <h2>How to use the multi-engine search</h2>
+  <p>Type a city or airport code in <strong>From</strong> — for example <em>YYZ</em>, <em>Calgary</em> or <em>Halifax</em> — and pick a destination, or leave <strong>To</strong> empty to explore. Choose your dates, travellers and cabin, select an engine and press <strong>Search flights</strong>. The results open in a new tab, and links appear underneath so you can run the identical search on every other engine without retyping.</p>
+  <h2>Five habits that find cheaper fares</h2>
+  <ol>
+    <li><strong>Check nearby airports.</strong> Toronto travellers should compare YYZ, YTZ and YHM; Vancouver travellers should look at YXX and Bellingham (BLI). Our <a href="{{ '/airports/' | relative_url }}">airport guides</a> list the alternatives for every major city.</li>
+    <li><strong>Move your dates by a day or two.</strong> Tuesday, Wednesday and Saturday departures are often cheaper. Use the date grid on Google Flights to see the whole week at once.</li>
+    <li><strong>Price one-ways separately.</strong> On some transborder and sun routes, two one-way tickets on different airlines beat a return fare.</li>
+    <li><strong>Compare the true cost.</strong> Basic fares may exclude a carry-on bag and seat selection. Run your bag through the <a href="{{ '/tools/carry-on-checker/' | relative_url }}">carry-on checker</a> before comparing prices.</li>
+    <li><strong>Know a good price when you see one.</strong> Our <a href="{{ '/deals/' | relative_url }}">price watch</a> lists deal thresholds for 80+ routes from Canada.</li>
+  </ol>
+  <div class="callout"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><p>Engines show prices in Canadian dollars by default from Canada, but taxes and bag fees vary by site. Always confirm the final total on the booking page before you pay.</p></div>
+  <p>Want a step-by-step walkthrough of each engine's best features? Read our <a href="{{ '/guides/google-flights-and-fare-tools-tutorial/' | relative_url }}">Google Flights and fare tools tutorial</a>.</p>
+</div>

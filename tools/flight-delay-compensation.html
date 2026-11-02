@@ -1,0 +1,55 @@
+---
+layout: tool
+title: "Flight Delay Compensation Calculator (Canada)"
+crumb: "Delay compensation"
+icon: shield
+permalink: /tools/flight-delay-compensation/
+description: "Estimate the compensation you may be owed under Canada's Air Passenger Protection Regulations for a flight delay, cancellation or denied boarding."
+lead: "Answer five questions to estimate what Canada's Air Passenger Protection Regulations (APPR) say an airline owes you."
+faq:
+  - q: "How much compensation can I get for a delayed flight in Canada?"
+    a: "For delays within the airline's control and not required for safety, large airlines owe $400 for 3 to 6 hours late, $700 for 6 to 9 hours and $1,000 for 9 hours or more. Small airlines owe $125, $250 and $500."
+  - q: "What counts as outside the airline's control?"
+    a: "Weather, air traffic control instructions, security threats, medical emergencies, wildlife strikes and similar events. In those cases no compensation is owed, but the airline must still rebook or refund you."
+  - q: "How long do I have to claim?"
+    a: "You have one year from the delay or cancellation to send a written claim to the airline. The airline then has 30 days to pay or explain why it believes nothing is owed."
+  - q: "What if the airline refuses?"
+    a: "You can file a complaint with the Canadian Transportation Agency. Keep boarding passes, receipts and every message from the airline."
+---
+<div class="tool" data-tool="compensation">
+  <div class="tool__panel">
+    <h2>Your flight</h2>
+    <form class="form-grid" onsubmit="return false">
+      <div class="field"><label for="c-size">Airline size</label>
+        <select id="c-size" name="size"><option value="large">Large (e.g. Air Canada, WestJet, Porter)</option><option value="small">Small regional airline</option></select>
+        <span class="hint">Large = 2 million+ passengers a year. Your airline's tariff states its size.</span></div>
+      <div class="field"><label for="c-sit">What happened?</label>
+        <select id="c-sit" name="situation"><option value="delay">Delay or cancellation</option><option value="denied">Denied boarding (bumped)</option></select></div>
+      <div class="field"><label for="c-reason">Reason the airline gave</label>
+        <select id="c-reason" name="reason"><option value="control">Within its control (crew, scheduling, overbooking, routine maintenance)</option><option value="safety">Within control but required for safety (unscheduled repair)</option><option value="outside">Outside its control (weather, ATC, security, medical)</option></select></div>
+      <div class="field"><label for="c-hours">Hours late arriving at final destination</label><input id="c-hours" name="hours" type="number" min="0" max="72" step="0.5" value="4"></div>
+      <div class="field"><label for="c-date">Flight date</label><input id="c-date" name="flight_date" type="date"></div>
+      <label class="consent full"><input type="checkbox" name="notified"> The airline told me about the change 14 or more days before departure</label>
+      <label class="consent full"><input type="checkbox" name="refund"> I took a refund instead of travelling</label>
+    </form>
+  </div>
+  <div class="tool__result" data-out aria-live="polite"></div>
+</div>
+<div class="prose prose--page">
+  <h2>How Canadian flight compensation works</h2>
+  <p>Canada's <strong>Air Passenger Protection Regulations</strong> apply to flights to, from and within Canada on any airline. What you are owed depends on two things: the <em>category</em> of the disruption and <em>how late you arrive</em> at your final destination — not how late you leave.</p>
+  <ul>
+    <li><strong>Within the airline's control</strong> (crew shortages, overbooking, routine maintenance): compensation, care while you wait and rebooking or refund.</li>
+    <li><strong>Within control but required for safety</strong> (a mechanical problem found outside routine checks): no compensation, but care and rebooking or refund.</li>
+    <li><strong>Outside the airline's control</strong> (weather, air traffic control, security): no compensation and no meals or hotel, but the airline must rebook you, or refund you if it cannot rebook you within 48 hours.</li>
+  </ul>
+  <h2>How to claim, step by step</h2>
+  <ol>
+    <li>Collect your boarding passes, booking confirmation, the airline's delay messages and receipts for meals or hotels.</li>
+    <li>Submit a written claim on the airline's compensation form within one year. State the flight, date, arrival delay and the amount you believe you are owed.</li>
+    <li>Wait up to 30 days for the airline's answer. It must pay or explain why it owes nothing.</li>
+    <li>If you disagree, file a complaint with the <a href="https://otc-cta.gc.ca/eng/air-passenger-complaints" rel="noopener">Canadian Transportation Agency</a>. Backlogs are long, so be patient and keep copies of everything.</li>
+  </ol>
+  <div class="callout callout--warn"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><p>The federal government has proposed changes to these rules. This calculator reflects the regulations in force as of {{ site.data.appr.verified | default: "November 2026" }}. Always check <a href="https://rppa-appr.ca/eng" rel="noopener">rppa-appr.ca</a> before you claim. General information, not legal advice.</p></div>
+  <p>For the full picture — tarmac delays, seating children with parents and lost baggage — read our <a href="{{ '/guides/canada-air-passenger-rights-appr-compensation/' | relative_url }}">Canadian passenger rights guide</a>.</p>
+</div>

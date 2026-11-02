@@ -1,0 +1,39 @@
+---
+layout: tool
+title: "Travel Currency Converter (CAD)"
+crumb: "Currency converter"
+icon: currency
+permalink: /tools/currency-converter/
+description: "Convert Canadian dollars to US dollars, euros, pounds, pesos, yen and 30+ travel currencies with daily reference rates and a quick conversion table."
+lead: "Convert CAD to the currencies Canadians spend most often abroad, with a quick reference table for everyday prices."
+faq:
+  - q: "Is this the rate I will get from my bank?"
+    a: "No. These are mid-market reference rates. Banks, exchange kiosks and card issuers add a markup, so your actual rate will be a little worse."
+  - q: "Should I pay in Canadian dollars or local currency abroad?"
+    a: "Choose the local currency. When a card terminal offers to charge you in Canadian dollars, the conversion rate it uses is usually worse than your card's."
+  - q: "What is the cheapest way to get foreign currency?"
+    a: "Use a no-foreign-transaction-fee credit card for purchases, and withdraw cash from a bank-owned ATM abroad rather than exchanging cash at airports."
+---
+<div class="tool" data-tool="currency">
+  <div class="tool__panel">
+    <h2>Convert</h2>
+    <form class="form-grid" onsubmit="return false">
+      <div class="field full"><label for="x-amt">Amount</label><input id="x-amt" name="amount" type="number" min="0" step="1" value="100"></div>
+      <div class="field"><label for="x-from">From</label><select id="x-from" name="from"></select></div>
+      <div class="field"><label for="x-to">To</label><select id="x-to" name="to"></select></div>
+      <div class="field full"><button class="btn btn--ghost" type="button" data-swapcur><svg class="i" aria-hidden="true"><use href="#i-swap"/></svg>Swap currencies</button></div>
+    </form>
+  </div>
+  <div class="tool__result" data-out aria-live="polite"></div>
+</div>
+<div class="prose prose--page">
+  <h2>Spend smarter abroad</h2>
+  <p>Exchange-rate fees are a hidden cost on almost every international trip. Most Canadian credit cards add a foreign-transaction fee of about 2.5% on purchases in other currencies, and airport exchange counters often charge far more through poor rates. On a two-week trip, those markups can cost as much as a night in a hotel.</p>
+  <ul>
+    <li><strong>Always pay in local currency</strong> when a card machine asks — dynamic currency conversion usually costs more.</li>
+    <li><strong>Use a no-FX-fee card</strong> for purchases. Several Canadian cards waive the fee; see our <a href="{{ '/guides/travel-credit-cards-canada-guide/' | relative_url }}">travel credit cards guide</a>.</li>
+    <li><strong>Withdraw larger amounts less often</strong> to limit per-withdrawal ATM fees.</li>
+    <li><strong>Carry two cards</strong> on different payment networks in case one is declined or blocked.</li>
+  </ul>
+  <p>Planning the full trip? Total your costs in Canadian dollars with the <a href="{{ '/tools/trip-budget/' | relative_url }}">trip budget planner</a>.</p>
+</div>

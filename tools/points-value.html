@@ -1,0 +1,42 @@
+---
+layout: tool
+title: "Points Value Calculator"
+crumb: "Points value"
+icon: star
+permalink: /tools/points-value/
+description: "Is your award ticket a good deal? Calculate cents per point for Aeroplan and other Canadian rewards programs and compare with our value benchmarks."
+lead: "Find the value of each point on a specific redemption and see whether paying cash would be smarter."
+faq:
+  - q: "What is a good value for Aeroplan points?"
+    a: "Many Canadian travellers aim for about 2 cents per point or more on flights. Below roughly 1.5 cents, paying cash and keeping points for a better redemption is often smarter."
+  - q: "Should I subtract taxes and fees?"
+    a: "Yes. Award tickets still charge taxes and sometimes carrier surcharges. Subtract them from the cash price before dividing by the points required."
+  - q: "What are forgone points?"
+    a: "A cash ticket usually earns points, while an award ticket usually does not. Subtracting the value of points you would have earned gives a more honest comparison."
+---
+<div class="tool" data-tool="points">
+  <div class="tool__panel">
+    <h2>Your redemption</h2>
+    <form class="form-grid" onsubmit="return false">
+      <div class="field full"><label for="p-prog">Program type</label>
+        <select id="p-prog" name="program"><option value="aeroplan">Aeroplan</option><option value="flexible">Transferable bank points</option><option value="fixed">Fixed-value points (1¢ each)</option><option value="other">Other program</option></select></div>
+      <div class="field"><label for="p-cash">Cash price of the same ticket (CAD)</label><input id="p-cash" name="cash" type="number" min="0" step="1" value="1200"></div>
+      <div class="field"><label for="p-tax">Taxes &amp; fees on the award (CAD)</label><input id="p-tax" name="taxes" type="number" min="0" step="1" value="120"></div>
+      <div class="field"><label for="p-pts">Points required</label><input id="p-pts" name="points" type="number" min="0" step="500" value="45000"></div>
+      <div class="field"><label for="p-earn">Points a cash ticket would earn (optional)</label><input id="p-earn" name="earn" type="number" min="0" step="100" value="0"></div>
+      <div class="field"><label for="p-ev">Your value per earned point (¢)</label><input id="p-ev" name="earnval" type="number" min="0" step="0.1" value="1.5"></div>
+    </form>
+  </div>
+  <div class="tool__result" data-out aria-live="polite"></div>
+</div>
+<div class="prose prose--page">
+  <h2>How to judge a points redemption</h2>
+  <p>The formula is simple: <strong>(cash price − taxes and fees on the award) ÷ points required × 100 = cents per point</strong>. The hard part is knowing what number is good. Points are a currency whose value depends entirely on how you spend them. The same balance can be worth 1 cent per point on a short domestic hop and 3 cents or more on a long-haul premium-cabin seat.</p>
+  <h3>Rules of thumb</h3>
+  <ul>
+    <li><strong>Redeem when value is high and cash prices are high</strong> — peak dates, last-minute trips and premium cabins.</li>
+    <li><strong>Pay cash when fares are on sale</strong> — a cheap sale fare makes points look poor value, and you earn points on the ticket.</li>
+    <li><strong>Watch surcharges</strong> — some partner airlines add large fees to award tickets that destroy the value.</li>
+  </ul>
+  <p>New to points? Start with our <a href="{{ '/guides/aeroplan-points-beginners-guide/' | relative_url }}">Aeroplan beginner's guide</a> and the <a href="{{ '/guides/travel-credit-cards-canada-guide/' | relative_url }}">travel credit cards guide</a>. General information only, not financial advice.</p>
+</div>

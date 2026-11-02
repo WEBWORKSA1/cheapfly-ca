@@ -1,0 +1,31 @@
+---
+layout: tool
+title: "Airport Code Finder"
+crumb: "Airport codes"
+icon: pin
+permalink: /tools/airport-codes/
+description: "Look up three-letter IATA airport codes for every major Canadian airport plus 180+ popular international airports. Search by city, country or code."
+lead: "Search by city, airport name, country or code. Canadian airports link to our cheap-flight guides."
+faq:
+  - q: "What is an IATA airport code?"
+    a: "It is the three-letter code assigned by the International Air Transport Association, used on tickets, bag tags and booking sites — for example YYZ for Toronto Pearson."
+  - q: "Why do so many Canadian airport codes start with Y?"
+    a: "Early radio and weather-station codes in Canada used a Y prefix, and the convention carried into airport codes. Most major Canadian airports start with Y."
+  - q: "Can I search a whole city instead of one airport?"
+    a: "Many booking sites accept city codes such as YTO for all Toronto airports and YMQ for Montréal, which helps you compare nearby airports in one search."
+---
+<div data-tool="codes">
+  <div class="filters">
+    <label class="filter-search"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg><span class="sr-only">Search airports</span><input type="search" name="q" placeholder="Try Toronto, YVR or Japan"></label>
+    <label><span class="sr-only">Region</span><select name="region" class="chip-toggle"><option value="all">All regions</option><option>Canada</option><option>USA</option><option>Mexico &amp; Caribbean</option><option>Latin America</option><option>Europe</option><option>Asia &amp; Pacific</option><option>Middle East &amp; Africa</option></select></label>
+    <span class="count" data-count style="margin:0"></span>
+  </div>
+  <div class="table-wrap" style="max-height:620px;overflow:auto;border-radius:14px">
+    <table class="data-table"><thead><tr><th>Code</th><th>Airport</th><th>City</th><th>Country</th></tr></thead><tbody></tbody></table>
+  </div>
+</div>
+<div class="prose prose--page" style="margin-top:36px">
+  <h2>Codes Canadian deal hunters should know</h2>
+  <p>Knowing codes speeds up every search, and city codes unlock cheaper combinations. Search <strong>YTO</strong> to include Toronto Pearson (YYZ), Billy Bishop (YTZ) and sometimes Hamilton (YHM) in one go, or <strong>YMQ</strong> for Montréal. Border-adjacent travellers should also memorise <strong>BUF</strong> (Buffalo), <strong>BLI</strong> (Bellingham), <strong>PBG</strong> (Plattsburgh) and <strong>BTV</strong> (Burlington) — they often undercut Canadian airports on US and sun routes.</p>
+  <p>Ready to search? Use the <a href="{{ '/tools/flight-search/' | relative_url }}">multi-engine flight search</a> or browse <a href="{{ '/airports/' | relative_url }}">Canadian airport guides</a>.</p>
+</div>

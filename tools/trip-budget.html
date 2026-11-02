@@ -1,0 +1,48 @@
+---
+layout: tool
+title: "Trip Budget Planner"
+crumb: "Trip budget"
+icon: calculator
+permalink: /tools/trip-budget/
+description: "Plan your trip budget in Canadian dollars: flights, hotel, food, transport, activities and insurance, with per-person totals and a monthly savings target."
+lead: "Total every part of your trip in CAD, see where the money goes and how much to set aside each month."
+faq:
+  - q: "How much buffer should I add to a travel budget?"
+    a: "Ten to fifteen percent covers most surprises such as resort fees, tips, airport meals and exchange-rate swings."
+  - q: "Should I budget in Canadian dollars or the local currency?"
+    a: "Plan in Canadian dollars so you can compare with your savings, then use the currency converter to check daily costs in local money."
+  - q: "What costs do travellers forget most often?"
+    a: "Checked-bag and seat fees, airport transfers, travel insurance, resort or city taxes, tips and card foreign-exchange fees."
+---
+<div class="tool" data-tool="budget">
+  <div class="tool__panel">
+    <h2>Your trip costs (CAD)</h2>
+    <form class="form-grid" onsubmit="return false">
+      <div class="field"><label for="t-people">Travellers</label><input id="t-people" name="people" type="number" min="1" value="2"></div>
+      <div class="field"><label for="t-nights">Nights</label><input id="t-nights" name="nights" type="number" min="0" value="7"></div>
+      <div class="field"><label for="t-flight">Flight per person</label><input id="t-flight" name="flight" type="number" min="0" step="10" value="650"></div>
+      <div class="field"><label for="t-fees">Bags &amp; seats per person</label><input id="t-fees" name="fees" type="number" min="0" step="5" value="60"></div>
+      <div class="field"><label for="t-hotel">Hotel per night (per room)</label><input id="t-hotel" name="hotel" type="number" min="0" step="10" value="160"></div>
+      <div class="field"><label for="t-rooms">Rooms</label><input id="t-rooms" name="rooms" type="number" min="1" value="1"></div>
+      <div class="field"><label for="t-food">Food per person per day</label><input id="t-food" name="food" type="number" min="0" step="5" value="55"></div>
+      <div class="field"><label for="t-local">Local transport per day (group)</label><input id="t-local" name="local" type="number" min="0" step="5" value="25"></div>
+      <div class="field"><label for="t-act">Activities &amp; tours (total)</label><input id="t-act" name="activities" type="number" min="0" step="10" value="300"></div>
+      <div class="field"><label for="t-ins">Insurance per person</label><input id="t-ins" name="insurance" type="number" min="0" step="5" value="70"></div>
+      <div class="field"><label for="t-buf">Buffer (%)</label><input id="t-buf" name="buffer" type="number" min="0" max="50" value="10"></div>
+      <div class="field"><label for="t-dep">Departure date</label><input id="t-dep" name="depart" type="date"></div>
+    </form>
+  </div>
+  <div class="tool__result" data-out aria-live="polite"></div>
+</div>
+<div class="prose prose--page">
+  <h2>Build a budget that survives the trip</h2>
+  <p>The flight is usually the single biggest cost, but it is rarely more than a third of the total. Accommodation, food and the small daily costs add up faster than most people expect — especially on longer trips. Planning every line in advance lets you see where a cheaper choice makes the biggest difference.</p>
+  <h3>Where Canadians typically save the most</h3>
+  <ul>
+    <li><strong>Flights:</strong> flexible dates and alerts often cut fares by a quarter or more. Set a target with our <a href="{{ '/deals/' | relative_url }}">price watch</a>.</li>
+    <li><strong>Bags:</strong> travelling carry-on only avoids checked-bag fees on both legs. Check your bag with the <a href="{{ '/tools/carry-on-checker/' | relative_url }}">carry-on checker</a>.</li>
+    <li><strong>Exchange fees:</strong> a no-foreign-transaction-fee card avoids the typical 2.5% markup on every purchase abroad.</li>
+    <li><strong>Accommodation:</strong> a kitchen can halve food costs on longer stays.</li>
+  </ul>
+  <p>The monthly savings figure divides your total by the months until departure. Automating that transfer the day after payday is the simplest way to arrive debt-free. For more ideas, see <a href="{{ '/guides/how-to-find-cheap-flights-from-canada/' | relative_url }}">how to find cheap flights from Canada</a>.</p>
+</div>

@@ -1,0 +1,47 @@
+---
+layout: tool
+title: "Best Time to Book Flights Advisor"
+crumb: "Best time to book"
+icon: calendar
+permalink: /tools/best-time-to-book/
+description: "Find the best time to book your flight from Canada. Get a personal booking window, a start-watching date and a book-by date for your route and travel dates."
+lead: "Choose the kind of trip and your travel date. We'll show your booking sweet spot and where you are on the timeline today."
+faq:
+  - q: "Is there one best day of the week to book flights?"
+    a: "Not reliably. The day you fly matters more than the day you buy. Midweek departures are often cheaper, while booking day has a small and inconsistent effect."
+  - q: "Do prices always rise closer to departure?"
+    a: "Usually, especially in the final three weeks. Sun packages are the main exception, where unsold inventory sometimes drops in price close to departure."
+  - q: "How far ahead should I book Christmas flights from Canada?"
+    a: "For the Christmas and New Year peak, start watching in late summer and aim to book by early autumn. The best fares rarely last into December."
+  - q: "What if I am already past the booking window?"
+    a: "Book soon, widen your search to nearby airports and dates, and consider one-way tickets on different airlines. Waiting rarely pays off inside three weeks."
+---
+<div class="tool" data-tool="booktime">
+  <div class="tool__panel">
+    <h2>Your trip</h2>
+    <form class="form-grid" onsubmit="return false">
+      <div class="field full"><label for="b-route">Type of trip</label>
+        <select id="b-route" name="route"><option value="domestic">Within Canada</option><option value="usa">Canada ⇄ USA</option><option value="sun" selected>Mexico &amp; Caribbean (sun)</option><option value="europe">Europe</option><option value="asia">Asia &amp; Pacific</option><option value="latam">Central &amp; South America</option></select></div>
+      <div class="field"><label for="b-date">Departure date</label><input id="b-date" name="travel" type="date"></div>
+      <div class="field" style="justify-content:flex-end"><label class="consent" style="margin-bottom:12px"><input type="checkbox" name="peak"> Busy holiday or school-break dates</label></div>
+    </form>
+  </div>
+  <div class="tool__result" data-out aria-live="polite"></div>
+</div>
+<div class="prose prose--page">
+  <h2>How the booking window works</h2>
+  <p>Airlines release seats roughly a year ahead and adjust prices as seats sell. Far from departure, fares tend to sit at a steady middle price. As the date approaches, airlines run sales to fill weak flights — that is the <strong>sweet spot</strong>. In the final weeks, remaining seats are priced for travellers who must fly, and fares climb quickly.</p>
+  <p>The window shifts with distance and demand. Short domestic and transborder trips have a short, late window. Long-haul trips to Europe and Asia reward earlier planning, especially in summer. Peak periods — Christmas, March Break and July–August — move every window earlier because seats sell out regardless of price.</p>
+  <table>
+    <thead><tr><th>Trip type</th><th>Normal window</th><th>Peak-season window</th></tr></thead>
+    <tbody>
+      <tr><td>Within Canada</td><td>3–8 weeks out</td><td>6–17 weeks out</td></tr>
+      <tr><td>Canada ⇄ USA</td><td>3–10 weeks out</td><td>6–17 weeks out</td></tr>
+      <tr><td>Mexico &amp; Caribbean</td><td>1–4 months out</td><td>3–8 months out</td></tr>
+      <tr><td>Europe</td><td>2–6 months out</td><td>4–9 months out</td></tr>
+      <tr><td>Asia &amp; Pacific</td><td>2.5–7 months out</td><td>4–10 months out</td></tr>
+      <tr><td>Central &amp; South America</td><td>1.5–5 months out</td><td>3–7 months out</td></tr>
+    </tbody>
+  </table>
+  <p>These windows are guidance from typical fare patterns, not guarantees. Flash sales and <a href="{{ '/guides/error-fares-and-mistake-fares/' | relative_url }}">mistake fares</a> can appear any time, which is why alerts beat calendars. For the full strategy, read <a href="{{ '/guides/best-time-to-book-flights-from-canada/' | relative_url }}">the best time to book flights from Canada</a>.</p>
+</div>

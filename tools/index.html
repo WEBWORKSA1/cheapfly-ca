@@ -1,0 +1,28 @@
+---
+layout: page
+title: "Free Travel Tools for Canadian Flyers"
+crumb: "Tools"
+description: "Free flight tools for Canadians: multi-engine flight search, delay compensation calculator, booking-window advisor, carry-on checker, points value, budget and more."
+permalink: /tools/
+eyebrow: "Free tools · No sign-up"
+lead: "Fast, private calculators that run in your browser. Nothing to install and no account needed."
+wide: true
+---
+<div class="container section-sm">
+  <div class="grid grid-3">
+    {%- for t in site.data.tools %}
+    <a class="card tool-card" href="{{ '/tools/' | append: t.slug | append: '/' | relative_url }}">
+      <span class="card__icon"><svg class="i" aria-hidden="true"><use href="#i-{{ t.icon }}"/></svg></span>
+      <h3>{{ t.name }}</h3><p>{{ t.short }}</p>
+      <span class="card__more">Open tool <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+    </a>
+    {%- endfor %}
+  </div>
+  <div class="prose prose--page" style="margin-top:40px">
+    <h2>Why we built these tools</h2>
+    <p>Most flight tools are built to sell you something. Ours are built to answer the questions Canadian travellers actually ask before they book: <em>Is this a good price? When should I buy? Will my bag fit? What am I owed if the flight is late?</em> Every calculator runs entirely in your browser, so the numbers you type never leave your device.</p>
+    <p>Each tool links to a deeper guide, so you can understand the reasoning behind the result instead of trusting a black box. Start with the <a href="{{ '/tools/flight-search/' | relative_url }}">multi-engine flight search</a> to compare fares across sites, then use the <a href="{{ '/tools/best-time-to-book/' | relative_url }}">booking-window advisor</a> to decide whether to buy now or wait.</p>
+  </div>
+  {% include ad.html slot="incontent" %}
+  {% include alert-cta.html source="tools-index" %}
+</div>

@@ -1,0 +1,84 @@
+---
+layout: page
+title: "Cheap Flight Video Hub"
+crumb: "Videos"
+description: "Watch the best cheap-flight, travel-hacking and packing videos for Canadian travellers, organised by topic — plus how to get your travel video featured on CheapFly."
+permalink: /videos/
+eyebrow: "Video hub"
+lead: "Learn the tricks visually: Google Flights walk-throughs, mistake fares, carry-on packing, points and passenger rights — curated for Canadians."
+wide: true
+faq:
+  - q: "Are these videos made by CheapFly?"
+    a: "Featured videos are made by independent YouTube creators and embedded using YouTube's privacy-enhanced mode. CheapFly is not affiliated with the creators unless a video is clearly labelled as our own."
+  - q: "Can I get my travel video featured?"
+    a: "Yes. Use the creator form on this page. We feature accurate, practical videos that help Canadian travellers save money, and we credit and link every creator."
+  - q: "Do embedded videos track me?"
+    a: "Videos load only when you press play, using youtube-nocookie.com. Once playing, YouTube's own privacy policy applies."
+---
+{%- assign vids = site.data.videos -%}
+{%- assign topics = "Cheap flight hacks|google flights tutorial cheap flights;Tools & tutorials|how to use skyscanner explore everywhere tutorial;Mistake fares|error fares mistake fares how to find;Packing & airports|carry on only packing tips one bag travel;Points & rewards|aeroplan points explained beginners canada;Passenger rights|canada air passenger protection regulations compensation explained;Sun destinations|cancun punta cana all inclusive budget tips canadians;Europe on a budget|cheap europe travel tips flights budget" | split: ";" -%}
+<div class="container section-sm">
+  {%- if vids and vids.size > 0 %}
+  <div data-filter-root=".video">
+    <div class="filters" data-filter-group="category" role="group" aria-label="Filter videos">
+      <span class="filters__label">Topic</span>
+      <button class="chip-toggle" type="button" data-val="all" aria-pressed="true">All</button>
+      {%- assign vcats = vids | map: "category" | uniq -%}
+      {%- for c in vcats %}<button class="chip-toggle" type="button" data-val="{{ c }}" aria-pressed="false">{{ c }}</button>{% endfor %}
+    </div>
+    <div class="video-grid">
+      {%- for v in vids %}{% include video.html v=v %}{% endfor %}
+    </div>
+  </div>
+  <p class="fine">Videos by third-party creators, embedded in privacy-enhanced mode. Click to play.</p>
+  {%- endif %}
+
+  <div class="section-head" style="margin-top:12px"><div><p class="eyebrow">Watch by topic</p><h2>Curated video playlists for Canadian flyers</h2><p>Each topic opens a focused YouTube search so you always see the newest videos. Pair them with our written guides for the details that change.</p></div></div>
+  <div class="grid grid-4">
+    {%- for t in topics %}{% assign parts = t | split: "|" %}
+    <a class="card" href="https://www.youtube.com/results?search_query={{ parts[1] | url_encode }}" target="_blank" rel="noopener">
+      <span class="card__icon" style="background:#ffe9ea;color:#e51e28"><svg class="i" aria-hidden="true"><use href="#i-video"/></svg></span>
+      <h3>{{ parts[0] }}</h3>
+      <p>Fresh videos on {{ parts[1] | replace: " canada", "" | replace: " explained", "" }}.</p>
+      <span class="card__more">Watch on YouTube <svg class="i" aria-hidden="true"><use href="#i-external"/></svg></span>
+    </a>
+    {%- endfor %}
+  </div>
+
+  {% include ad.html slot="incontent" %}
+
+  <div class="split section-sm">
+    <div class="prose">
+      <p class="eyebrow">For creators</p>
+      <h2>Get your travel video featured</h2>
+      <p>Make practical videos about cheap flights, travel hacking, Canadian airports or budget destinations? Submit them to be considered for the CheapFly Video Hub, our guides and our newsletter. Featured creators get a credited link and a chance at paid sponsorship collaborations as our audience grows.</p>
+      <ul>
+        <li>Accurate, useful and up to date (2024 or newer preferred)</li>
+        <li>Relevant to Canadian travellers</li>
+        <li>No misleading thumbnails or unsafe advice</li>
+      </ul>
+      <p>Want to collaborate on a sponsored video instead? See <a href="{{ '/advertise/' | relative_url }}">partnership options</a>.</p>
+    </div>
+    <div class="form-card" data-form-holder>
+      <form data-form="Video Submission" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="vs-name">Your name / channel</label><input id="vs-name" name="name" required></div>
+          <div class="field"><label for="vs-email">Email</label><input id="vs-email" type="email" name="email" required autocomplete="email"></div>
+          <div class="field full"><label for="vs-url">Video link</label><input id="vs-url" type="url" name="video_url" required placeholder="https://www.youtube.com/watch?v=…"></div>
+          <div class="field"><label for="vs-topic">Topic</label><select id="vs-topic" name="topic"><option>Cheap flight hacks</option><option>Tools &amp; tutorials</option><option>Packing &amp; airports</option><option>Points &amp; rewards</option><option>Passenger rights</option><option>Destinations</option></select></div>
+          <div class="field"><label for="vs-collab">Open to sponsored collabs?</label><select id="vs-collab" name="collab"><option>Yes</option><option>Maybe</option><option>No</option></select></div>
+          <div class="field full"><label for="vs-notes">Why it helps Canadian travellers</label><textarea id="vs-notes" name="notes"></textarea></div>
+          <label class="consent full"><input type="checkbox" name="consent" value="yes" required> I own or represent this video and agree CheapFly.ca may embed and link to it.</label>
+        </div>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn--primary btn--block" type="submit" style="margin-top:16px">Submit video</button>
+      </form>
+      <div class="form-success"><div class="ok"><svg class="i"><use href="#i-check"/></svg></div><h3>Thanks, creator!</h3><p class="muted">We review submissions weekly.</p></div>
+    </div>
+  </div>
+  {%- if site.social.youtube != "" %}
+  <div class="big-cta"><div><h2>Subscribe to CheapFly on YouTube</h2><p>Short, practical videos on deals and travel hacks.</p></div><div><a class="btn btn--accent btn--lg" href="{{ site.social.youtube }}" target="_blank" rel="noopener">Subscribe</a></div></div>
+  {%- endif %}
+  <div class="narrow" style="margin:0 auto">{% include faq.html items=page.faq %}</div>
+  {% include alert-cta.html source="videos" %}
+</div>

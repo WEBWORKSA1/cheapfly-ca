@@ -1,0 +1,41 @@
+---
+layout: tool
+title: "Carry-On Size Checker"
+crumb: "Carry-on checker"
+icon: suitcase
+permalink: /tools/carry-on-checker/
+description: "Check whether your bag fits carry-on and personal-item limits on Air Canada, WestJet, Porter, Flair, Air Transat and 15+ other airlines. Avoid surprise bag fees."
+lead: "Enter your bag's dimensions — wheels and handles included — and see which airlines accept it as a carry-on or free personal item."
+faq:
+  - q: "Do wheels and handles count?"
+    a: "Yes. Airlines measure the outside dimensions including wheels, handles and side pockets. Measure your bag packed, because soft bags bulge."
+  - q: "Do basic fares include a carry-on?"
+    a: "Often not. On many North American and sun routes, the cheapest fares on Canadian airlines include only a personal item that fits under the seat. Check your fare rules before you pack."
+  - q: "What happens if my bag is too big at the gate?"
+    a: "It may be checked at the gate, often with a fee that is higher than prepaying online. Measuring at home is the cheapest insurance."
+---
+<div class="tool" data-tool="carryon">
+  <div class="tool__panel">
+    <h2>Your bag</h2>
+    <form class="form-grid" onsubmit="return false">
+      <div class="field"><label for="k-unit">Units</label><select id="k-unit" name="unit"><option value="cm">Centimetres / kg</option><option value="in">Inches / lb</option></select></div>
+      <div class="field"><label for="k-kg">Weight (optional)</label><input id="k-kg" name="kg" type="number" min="0" step="0.1" placeholder="e.g. 7"></div>
+      <div class="field"><label for="k-l">Length (tallest side)</label><input id="k-l" name="l" type="number" min="0" step="0.5" value="54"></div>
+      <div class="field"><label for="k-w">Width</label><input id="k-w" name="w" type="number" min="0" step="0.5" value="36"></div>
+      <div class="field"><label for="k-h">Depth</label><input id="k-h" name="h" type="number" min="0" step="0.5" value="22"></div>
+    </form>
+  </div>
+  <div class="tool__result" data-out aria-live="polite" style="max-height:640px;overflow:auto"></div>
+</div>
+<div class="prose prose--page">
+  <h2>How to avoid bag fees on Canadian flights</h2>
+  <p>Bag fees are where cheap fares stop being cheap. Checked bags commonly cost a meaningful amount each way on North American and sun routes, and a carry-on may not be included on the lowest fare. Travelling with a bag that fits the <strong>personal item</strong> limit is the single most reliable way to fly any airline at the advertised price.</p>
+  <ul>
+    <li><strong>Measure the packed bag</strong>, including wheels and handles.</li>
+    <li><strong>Choose soft-sided bags</strong> for personal items — they compress to fit sizers.</li>
+    <li><strong>Prepay online</strong> if you need a bag; gate fees are usually higher.</li>
+    <li><strong>Wear your bulkiest items</strong> on travel day.</li>
+  </ul>
+  <div class="callout callout--warn"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><p>Airline limits change often and can differ by route and fare. This checker uses published limits we reviewed recently, but always confirm on your airline's website before you fly.</p></div>
+  <p>Packing tips that make carry-on only easy are in our <a href="{{ '/guides/carry-on-only-packing-guide/' | relative_url }}">carry-on-only packing guide</a>.</p>
+</div>

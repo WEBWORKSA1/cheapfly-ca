@@ -1,0 +1,45 @@
+---
+layout: tool
+title: "Flight Distance & Time Calculator"
+crumb: "Flight distance"
+icon: globe
+permalink: /tools/flight-distance/
+description: "Calculate flight distance, estimated flight time and approximate CO2 between 200+ airports, including every major Canadian airport. Free and instant."
+lead: "Pick two airports to see the great-circle distance, an estimated nonstop flight time and approximate emissions."
+faq:
+  - q: "Why is the actual flight time different from the estimate?"
+    a: "Jet-stream winds, routing around weather or restricted airspace, and airport congestion all change real flight times. Eastbound flights across the Atlantic are often faster than westbound."
+  - q: "What is great-circle distance?"
+    a: "It is the shortest path between two points on a sphere. Flights over long distances follow curved paths on flat maps because of it — which is why flights from Canada to Asia pass near the Arctic."
+  - q: "How accurate is the CO2 estimate?"
+    a: "It is a rough average per passenger for illustration only. Aircraft type, seat density, load factor and routing all change real emissions."
+---
+<div class="tool" data-tool="distance">
+  <div class="tool__panel">
+    <h2>Choose airports</h2>
+    <form class="form-grid">
+      <div class="field"><label for="d-from">From</label><input id="d-from" name="from" list="airport-list" value="YYZ" autocomplete="off"></div>
+      <div class="field"><label for="d-to">To</label><input id="d-to" name="to" list="airport-list" value="LHR" autocomplete="off"></div>
+      <div class="field"><label for="d-cabin">Cabin (for CO₂)</label><select id="d-cabin" name="cabin"><option value="economy">Economy</option><option value="premium">Premium economy</option><option value="business">Business</option></select></div>
+      <div class="field" style="justify-content:flex-end"><button class="btn btn--primary" type="submit">Calculate</button></div>
+    </form>
+  </div>
+  <div class="tool__result" data-out aria-live="polite"></div>
+</div>
+<div class="prose prose--page">
+  <h2>Why distance matters when you hunt for deals</h2>
+  <p>Fares are not priced by distance, which is exactly why distance is useful. When a 7,000 km flight to Europe costs less than a 1,500 km domestic hop, you know you are looking at a genuinely good deal. Comparing price per kilometre across options helps you spot value quickly.</p>
+  <p>Distance also drives comfort decisions. Above roughly 6–7 hours, an aisle seat, a bit of extra legroom or a stopover can be worth paying for. Below that, the cheapest basic fare is often fine if your bag fits the rules.</p>
+  <h3>Popular distances from Canada</h3>
+  <table>
+    <thead><tr><th>Route</th><th>Approx. distance</th><th>Typical nonstop time</th></tr></thead>
+    <tbody>
+      <tr><td>Toronto → Cancún</td><td>~2,600 km</td><td>~4 h</td></tr>
+      <tr><td>Montréal → Paris</td><td>~5,500 km</td><td>~6.5–7 h</td></tr>
+      <tr><td>Toronto → London</td><td>~5,700 km</td><td>~6.5–7 h</td></tr>
+      <tr><td>Vancouver → Tokyo</td><td>~7,500 km</td><td>~10–11 h</td></tr>
+      <tr><td>Calgary → Honolulu</td><td>~4,700 km</td><td>~6.5 h</td></tr>
+    </tbody>
+  </table>
+  <p>Looking for codes? Use the <a href="{{ '/tools/airport-codes/' | relative_url }}">airport code finder</a>, or plan the trip with our <a href="{{ '/tools/flight-search/' | relative_url }}">multi-engine flight search</a>.</p>
+</div>
