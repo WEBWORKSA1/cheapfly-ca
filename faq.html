@@ -1,0 +1,53 @@
+---
+layout: page
+title: "Frequently Asked Questions"
+crumb: "FAQ"
+description: "Answers to common questions about CheapFly.ca deal alerts, deal thresholds, booking, mistake fares, privacy, contests, support and advertising."
+permalink: /faq/
+eyebrow: "Help centre"
+lead: "Quick answers about alerts, deals, booking and how CheapFly works."
+wide: true
+faq_groups:
+  - name: "Deal alerts"
+    items:
+      - q: "How do I sign up for deal alerts?"
+        a: "Enter your email and home airport in any alert box, or use the personalised alerts page to choose up to three airports, regions, months and a budget."
+      - q: "How often will you email me?"
+        a: "You choose instant alerts for big drops plus a weekly digest, a weekly digest only, or mistake fares only."
+      - q: "How do I unsubscribe or change airports?"
+        a: "Every email includes one-click unsubscribe and preference links. You can also use the contact page and we will update your settings."
+      - q: "Do you cover my small airport?"
+        a: "Choose Other on the alerts page and tell us your airport. We also flag deals from the nearest larger airports and US border airports when they save you money."
+  - name: "Deals and booking"
+    items:
+      - q: "Can I book through CheapFly?"
+        a: "No. We are not a travel agency. You book directly with the airline or booking site, and we never add fees."
+      - q: "Why was the price higher when I clicked?"
+        a: "Fares change by the minute and cheap seats sell out. Try nearby dates, set an alert and act faster next time — the best deals often last only hours."
+      - q: "What is a deal threshold?"
+        a: "Our guidance for a great return economy fare on a route in CAD, including taxes. It is not a live price."
+      - q: "Are mistake fares safe to book?"
+        a: "Usually, but airlines occasionally cancel them. Wait a few days for the ticket to be confirmed before booking non-refundable hotels or tours."
+  - name: "Privacy, support and partners"
+    items:
+      - q: "Do you sell my data?"
+        a: "No. We never sell subscriber lists. Quote requests are shared with a vetted travel partner only when you explicitly ask us to."
+      - q: "Why do you show ads?"
+        a: "Advertising from Google AdSense helps keep CheapFly free. Ads are labelled and never influence our editorial content."
+      - q: "How can I support CheapFly?"
+        a: "Share us with friends, send deal tips, or make a voluntary contribution on the support page. Contributions are not tax-deductible."
+      - q: "How do I advertise or partner with you?"
+        a: "Visit the advertise and partner page for placements and packages, or use the contact link in the top bar for domain, sponsorship and partnership enquiries."
+---
+{%- assign allfaq = "" | split: "" -%}
+{%- for g in page.faq_groups %}{% assign allfaq = allfaq | concat: g.items %}{% endfor -%}
+<div class="container section-sm narrow">
+  {%- for g in page.faq_groups %}
+  {% include faq.html items=g.items title=g.name id=forloop.index %}
+  {%- endfor %}
+  {% include alert-cta.html source="faq" %}
+  <p class="muted ta-c">Still stuck? <a href="{{ '/contact/' | relative_url }}">Contact us</a>.</p>
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for f in allfaq %}{"@type":"Question","name":{{ f.q | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a | jsonify }}}}{% unless forloop.last %},{% endunless %}{% endfor %}]}
+</script>

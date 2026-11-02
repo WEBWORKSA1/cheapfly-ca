@@ -1,0 +1,25 @@
+---
+layout: null
+permalink: /feed.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>{{ site.title }} — Guides</title>
+  <link>{{ '/' | absolute_url }}</link>
+  <atom:link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/rss+xml"/>
+  <description>{{ site.description | strip | xml_escape }}</description>
+  <language>en-ca</language>
+  <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+  {%- assign items = site.guides | sort: "date" | reverse -%}
+  {%- for g in items limit: 30 %}
+  <item>
+    <title>{{ g.title | xml_escape }}</title>
+    <link>{{ g.url | absolute_url }}</link>
+    <guid isPermaLink="true">{{ g.url | absolute_url }}</guid>
+    <pubDate>{{ g.date | date_to_rfc822 }}</pubDate>
+    <category>{{ g.category | xml_escape }}</category>
+    <description>{{ g.description | xml_escape }}</description>
+  </item>{% endfor %}
+</channel>
+</rss>

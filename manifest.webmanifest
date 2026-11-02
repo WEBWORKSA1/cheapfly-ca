@@ -1,0 +1,20 @@
+---
+layout: null
+permalink: /manifest.webmanifest
+---
+{
+  "name": "CheapFly.ca — Cheap Flights for Canadians",
+  "short_name": "CheapFly",
+  "description": "Free flight deal alerts, price watch, guides and tools for Canadian travellers.",
+  "start_url": "{{ '/' | relative_url }}",
+  "scope": "{{ '/' | relative_url }}",
+  "display": "standalone",
+  "background_color": "#0b1b3b",
+  "theme_color": "#1d5bff",
+  "icons": [
+    {%- assign i512 = site.static_files | where: "path", "/assets/img/icon-512.png" -%}{% if i512.size > 0 %}
+    { "src": "{{ '/assets/img/icon-192.png' | relative_url }}", "sizes": "192x192", "type": "image/png" },
+    { "src": "{{ '/assets/img/icon-512.png' | relative_url }}", "sizes": "512x512", "type": "image/png" },{% endif %}
+    { "src": "{{ '/assets/img/favicon.svg' | relative_url }}", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -1,0 +1,29 @@
+---
+layout: page
+title: "Cheap Flights from Canada to Popular Destinations"
+crumb: "Destinations"
+description: "Where Canadians fly for less: best months, cheapest months, good-fare benchmarks and entry notes for Cancún, London, Tokyo, Lisbon, Orlando and more."
+permalink: /destinations/
+eyebrow: "Destinations"
+lead: "When to go, what a good fare looks like and which Canadian airports fly there — for the trips Canadians book most."
+wide: true
+---
+{%- assign regions = site.destinations | map: "region" | uniq | sort -%}
+<div class="container section-sm" data-filter-root=".place-card">
+  <div class="filters" data-filter-group="region" role="group" aria-label="Filter by region">
+    <span class="filters__label">Region</span>
+    <button class="chip-toggle" type="button" data-val="all" aria-pressed="true">All</button>
+    {%- for r in regions %}<button class="chip-toggle" type="button" data-val="{{ r }}" aria-pressed="false">{{ r }}</button>{% endfor %}
+  </div>
+  <div class="grid grid-4">
+    {%- for d in site.destinations %}
+    <a class="card place-card place-card--dest" href="{{ d.url | relative_url }}" data-region="{{ d.region }}" data-text="{{ d.destination }} {{ d.country }} {{ d.code }}">
+      <div class="place-card__top"><span class="place-card__code">{{ d.code }}</span><div class="place-card__sub">{{ d.country }}</div><svg class="i i-bg" aria-hidden="true"><use href="#i-globe"/></svg></div>
+      <div class="place-card__body"><h3>{{ d.destination }}</h3><p class="muted">Best: {{ d.best_months | truncate: 60 }}</p></div>
+    </a>
+    {%- endfor %}
+  </div>
+  <p class="empty" data-filter-empty hidden>No destinations in this region yet.</p>
+  {% include ad.html slot="incontent" %}
+  {% include alert-cta.html source="destinations-index" %}
+</div>

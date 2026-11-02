@@ -1,0 +1,261 @@
+---
+layout: default
+title: "Free Flight Deal Alerts for Canadians"
+description: "Get free, personalised flight deal alerts from your Canadian home airport: mistake fares, sun sales and Europe and Asia drops, matched to your budget and travel months."
+permalink: /deal-alerts/
+no_popup: true
+faq:
+  - q: "How much do CheapFly deal alerts cost?"
+    a: "Nothing. Alerts are free and supported by advertising and sponsors. A premium tier with extra features may launch later; joining the waitlist is optional and free."
+  - q: "How do you choose which deals to send?"
+    a: "We compare fares against our deal thresholds for each route and season, check that dates are actually bookable, and only send deals that beat typical prices by a clear margin."
+  - q: "Will you sell my email address?"
+    a: "No. We never sell subscriber lists. Quote requests for group or vacation travel are shared with a vetted travel partner only when you tick the box asking us to do so."
+  - q: "Can I change my airports or unsubscribe?"
+    a: "Yes. Every email includes a link to update your preferences or unsubscribe in one click, as required by Canada's anti-spam law (CASL)."
+  - q: "Do you cover airports outside the big cities?"
+    a: "Yes. Choose Other and tell us your airport. We also include nearby options, such as US border airports, when they save Canadians real money."
+---
+<section class="lead-hero">
+  <div class="container lead-hero__grid">
+    <div>
+      <nav class="crumbs" aria-label="Breadcrumb" style="color:#9db2e6"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">Deal alerts</span></nav>
+      <p class="eyebrow eyebrow--light"><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg>Free personalised alerts</p>
+      <h1>Cheap flights from <em style="font-style:normal;color:#ffb020">your</em> airport, delivered.</h1>
+      <p class="lead">Tell us where you fly from, where you'd love to go and what you'll pay. We'll email you only the deals that fit — mistake fares included.</p>
+      <ul class="benefits">
+        <li><span class="tick"><svg class="i"><use href="#i-check"/></svg></span><span><strong>Hand-checked deals</strong> — real dates you can book, not clickbait prices.</span></li>
+        <li><span class="tick"><svg class="i"><use href="#i-check"/></svg></span><span><strong>Matched to you</strong> — your airports, regions, months and budget.</span></li>
+        <li><span class="tick"><svg class="i"><use href="#i-check"/></svg></span><span><strong>Mistake fares fast</strong> — instant alerts for the deals that disappear in hours.</span></li>
+        <li><span class="tick"><svg class="i"><use href="#i-check"/></svg></span><span><strong>Book direct</strong> — no markups, no booking fees, ever.</span></li>
+      </ul>
+      <div class="trust-row">
+        <span><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>We never sell your email</span>
+        <span><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg>CASL-compliant</span>
+        <span><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>1-click unsubscribe</span>
+      </div>
+    </div>
+
+    <div class="form-card" data-form-holder>
+      <form data-form="Deal Alerts (personalised wizard)" novalidate>
+        <div class="wizard" data-wizard>
+          <div class="wizard__progress" aria-hidden="true"><div class="wizard__bar"></div></div>
+          <div class="wizard__meta"><span data-step-label>Step 1 of 4</span><span>About 40 seconds</span></div>
+
+          <fieldset class="wizard__step is-active" style="border:0;padding:0;margin:0">
+            <legend class="sr-only">Home airports</legend>
+            <h3>Where do you fly from?</h3>
+            <p>Pick up to 3 airports. Nearby airports often have cheaper fares.</p>
+            <div class="wizard__group">
+              <div class="check-grid" data-max="3" data-require-one="Choose at least one airport.">
+                {%- for a in site.data.home_airports %}
+                <label class="check-chip"><input type="checkbox" name="home_airports" value="{{ a.code }}"><span>{{ a.code }} <small>{{ a.city }}</small></span></label>
+                {%- endfor %}
+                <label class="check-chip"><input type="checkbox" name="home_airports" value="US border airport"><span>US border <small>BUF, BLI, PBG…</small></span></label>
+              </div>
+            </div>
+            <div class="field"><label for="w-other">Other airport (optional)</label><input id="w-other" name="other_airport" placeholder="e.g. YXU London, YQM Moncton"></div>
+          </fieldset>
+
+          <fieldset class="wizard__step" style="border:0;padding:0;margin:0">
+            <legend class="sr-only">Destinations</legend>
+            <h3>Where do you dream of going?</h3>
+            <p>Choose all that apply — or "anywhere cheap".</p>
+            <div class="wizard__group">
+              <div class="check-grid" data-require-one="Choose at least one option.">
+                <label class="check-chip"><input type="checkbox" name="regions" value="Sun: Mexico & Caribbean"><span>Sun &amp; beaches</span></label>
+                <label class="check-chip"><input type="checkbox" name="regions" value="USA"><span>USA</span></label>
+                <label class="check-chip"><input type="checkbox" name="regions" value="Europe"><span>Europe</span></label>
+                <label class="check-chip"><input type="checkbox" name="regions" value="Asia & Pacific"><span>Asia &amp; Pacific</span></label>
+                <label class="check-chip"><input type="checkbox" name="regions" value="Latin America"><span>Latin America</span></label>
+                <label class="check-chip"><input type="checkbox" name="regions" value="Within Canada"><span>Within Canada</span></label>
+                <label class="check-chip"><input type="checkbox" name="regions" value="Middle East & Africa"><span>Middle East &amp; Africa</span></label>
+                <label class="check-chip"><input type="checkbox" name="regions" value="Anywhere cheap"><span>Anywhere cheap!</span></label>
+              </div>
+            </div>
+            <div class="field"><label for="w-dream">Bucket-list destination (optional)</label><input id="w-dream" name="dream_destination" placeholder="e.g. Tokyo, Lisbon, Cancún"></div>
+          </fieldset>
+
+          <fieldset class="wizard__step" style="border:0;padding:0;margin:0">
+            <legend class="sr-only">Travel style</legend>
+            <h3>How do you like to travel?</h3>
+            <p>This helps us skip deals that don't fit.</p>
+            <div class="wizard__group">
+              <span class="label">When can you travel?</span>
+              <div class="check-grid">
+                {%- assign mlist = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec,Flexible" | split: "," -%}{%- for m in mlist %}
+                <label class="check-chip"><input type="checkbox" name="months" value="{{ m }}"><span>{{ m }}</span></label>
+                {%- endfor %}
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="field"><label for="w-budget">Max return fare per person: <span class="range-out" id="w-budget-out"></span></label><input id="w-budget" type="range" name="max_fare_cad" min="200" max="3000" step="50" value="900" data-out="#w-budget-out" data-prefix="$" data-plus="1"></div>
+              <div class="field"><label for="w-pax">Usually travelling as</label>
+                <select id="w-pax" name="travellers"><option>Solo</option><option selected>Couple</option><option>Family with kids</option><option>Friends / group</option><option>Business</option></select></div>
+              <div class="field"><label for="w-cabin">Cabin</label>
+                <select id="w-cabin" name="cabin"><option>Economy</option><option>Premium economy</option><option>Business class deals too</option></select></div>
+              <div class="field"><label for="w-freq">Alert style</label>
+                <select id="w-freq" name="frequency"><option value="Instant + weekly digest">Instant for big deals + weekly digest</option><option value="Weekly digest only">Weekly digest only</option><option value="Mistake fares only">Mistake fares only</option></select></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="wizard__step" style="border:0;padding:0;margin:0">
+            <legend class="sr-only">Contact details</legend>
+            <h3>Where should we send your deals?</h3>
+            <p>Last step. We'll confirm your preferences by email.</p>
+            <div class="form-grid">
+              <div class="field"><label for="w-name">First name</label><input id="w-name" name="first_name" required autocomplete="given-name"></div>
+              <div class="field"><label for="w-email">Email</label><input id="w-email" type="email" name="email" required autocomplete="email"></div>
+              <div class="field"><label for="w-prov">Province / territory</label>
+                <select id="w-prov" name="province" required><option value="">Select…</option><option>Alberta</option><option>British Columbia</option><option>Manitoba</option><option>New Brunswick</option><option>Newfoundland and Labrador</option><option>Northwest Territories</option><option>Nova Scotia</option><option>Nunavut</option><option>Ontario</option><option>Prince Edward Island</option><option>Quebec</option><option>Saskatchewan</option><option>Yukon</option><option>Outside Canada</option></select></div>
+              <div class="field"><label for="w-phone">Mobile (optional, for future SMS alerts)</label><input id="w-phone" type="tel" name="phone" autocomplete="tel" placeholder="Optional"></div>
+              <label class="consent full"><input type="checkbox" name="consent" value="Express consent given" required> I consent to receive flight deal emails and occasional partner offers from CheapFly.ca. I can withdraw consent at any time using the unsubscribe link.</label>
+              <label class="consent full"><input type="checkbox" name="premium_waitlist" value="Yes"> Add me to the waitlist for CheapFly Pro (optional, free to join): early-access alerts, business-class deals and points sweet spots.</label>
+            </div>
+            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          </fieldset>
+
+          <div class="wizard__nav">
+            <button class="btn btn--ghost" type="button" data-prev>Back</button>
+            <button class="btn btn--primary" type="button" data-next>Continue <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+          <button class="btn btn--accent btn--lg btn--block" type="submit" style="margin-top:12px"><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg>Start my free alerts</button>
+          <p class="form-note"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Your details are used only to send the alerts you asked for. See our <a href="{{ '/privacy/' | relative_url }}">privacy policy</a>.</p>
+        </div>
+      </form>
+      <div class="form-success">
+        <div class="ok"><svg class="i"><use href="#i-check"/></svg></div>
+        <h3>Welcome aboard!</h3>
+        <p class="muted">Your personalised alerts are set up. Next steps:</p>
+        <ol style="text-align:left;max-width:380px;margin:0 auto 16px">
+          <li>Add us to your contacts so deals don't land in spam.</li>
+          <li>Read the <a href="{{ '/guides/how-to-find-cheap-flights-from-canada/' | relative_url }}">cheap-flights playbook</a>.</li>
+          <li>Enter this month's <a href="{{ '/contests/' | relative_url }}">deal-hunter contest</a>.</li>
+        </ol>
+        <button class="btn btn--ghost btn--sm" type="button" data-copy-link>Share CheapFly with a friend</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="section-head section-head--center"><p class="eyebrow">More ways we can help</p><h2>Planning something bigger?</h2><p>Free, no-obligation requests. With your permission we match you with a vetted Canadian travel professional who quotes you directly.</p></div>
+    <div role="tablist" class="tabs" aria-label="Request types">
+      <button class="tab" role="tab" id="t-group" aria-controls="p-group" aria-selected="true"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Group &amp; event travel</button>
+      <button class="tab" role="tab" id="t-vac" aria-controls="p-vac" aria-selected="false" tabindex="-1"><svg class="i" aria-hidden="true"><use href="#i-umbrella"/></svg>Vacation concierge</button>
+      <button class="tab" role="tab" id="t-partner" aria-controls="p-partner" aria-selected="false" tabindex="-1"><svg class="i" aria-hidden="true"><use href="#i-handshake"/></svg>Travel business partners</button>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="p-group" aria-labelledby="t-group">
+      <div class="split" style="align-items:start">
+        <div>
+          <h3>Group fares for 10+ travellers</h3>
+          <p class="muted">Weddings, sports teams, school trips, family reunions, corporate retreats and conferences. Group fares can lock prices, allow name changes later and include flexible deposits.</p>
+          <ul class="benefits" style="color:var(--text-2)">
+            <li><span class="tick" style="color:var(--mint);background:var(--mint-50)"><svg class="i"><use href="#i-check"/></svg></span><span>One quote covering flights and, optionally, hotels and transfers</span></li>
+            <li><span class="tick" style="color:var(--mint);background:var(--mint-50)"><svg class="i"><use href="#i-check"/></svg></span><span>Destination weddings in Mexico and the Caribbean a specialty</span></li>
+            <li><span class="tick" style="color:var(--mint);background:var(--mint-50)"><svg class="i"><use href="#i-check"/></svg></span><span>Free to request — you decide if you book</span></li>
+          </ul>
+        </div>
+        <div class="form-card" data-form-holder>
+          <form data-form="Group Travel Quote" novalidate>
+            <div class="form-grid">
+              <div class="field"><label for="g-name">Your name</label><input id="g-name" name="name" required autocomplete="name"></div>
+              <div class="field"><label for="g-email">Email</label><input id="g-email" type="email" name="email" required autocomplete="email"></div>
+              <div class="field"><label for="g-phone">Phone</label><input id="g-phone" type="tel" name="phone" autocomplete="tel"></div>
+              <div class="field"><label for="g-type">Group type</label><select id="g-type" name="group_type" required><option value="">Select…</option><option>Destination wedding</option><option>Sports team / tournament</option><option>School / university trip</option><option>Corporate retreat / conference</option><option>Family reunion</option><option>Faith / community group</option><option>Other</option></select></div>
+              <div class="field"><label for="g-size">Group size</label><input id="g-size" type="number" min="2" name="group_size" required placeholder="e.g. 24"></div>
+              <div class="field"><label for="g-from">Departing from</label><input id="g-from" name="from" list="airport-list" required placeholder="City or airport"></div>
+              <div class="field"><label for="g-to">Destination</label><input id="g-to" name="to" required placeholder="City, country or resort"></div>
+              <div class="field"><label for="g-dates">Approximate dates</label><input id="g-dates" name="dates" placeholder="e.g. Feb 12–19, 2027"></div>
+              <div class="field"><label for="g-budget">Budget per person (CAD)</label><select id="g-budget" name="budget"><option>Under $750</option><option>$750–$1,500</option><option>$1,500–$3,000</option><option>$3,000+</option><option>Not sure yet</option></select></div>
+              <div class="field"><label for="g-hotel">Also need</label><select id="g-hotel" name="also_need"><option>Flights only</option><option>Flights + hotel</option><option>All-inclusive package</option><option>Flights + hotel + transfers</option></select></div>
+              <div class="field full"><label for="g-notes">Anything else?</label><textarea id="g-notes" name="notes" placeholder="Event details, accessibility needs, preferred airlines…"></textarea></div>
+              <label class="consent full"><input type="checkbox" name="consent" value="Share with vetted partner: yes" required> Share my request with one vetted travel partner so they can quote me. I agree to be contacted about this request.</label>
+            </div>
+            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn--primary btn--block" type="submit" style="margin-top:16px">Request my group quote</button>
+          </form>
+          <div class="form-success"><div class="ok"><svg class="i"><use href="#i-check"/></svg></div><h3>Request received</h3><p class="muted">Expect a reply within 1–2 business days.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="p-vac" aria-labelledby="t-vac" hidden>
+      <div class="split" style="align-items:start">
+        <div>
+          <h3>Let a pro find your all-inclusive or package deal</h3>
+          <p class="muted">Tell us your dates and budget. We'll pass your request to a licensed Canadian travel advisor who compares packages across tour operators — usually at no cost to you because advisors are paid by suppliers.</p>
+          <div class="callout"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><p>Ontario, Quebec and British Columbia regulate travel sellers. We only work with advisors registered where required.</p></div>
+        </div>
+        <div class="form-card" data-form-holder>
+          <form data-form="Vacation Concierge Request" novalidate>
+            <div class="form-grid">
+              <div class="field"><label for="v-name">Your name</label><input id="v-name" name="name" required autocomplete="name"></div>
+              <div class="field"><label for="v-email">Email</label><input id="v-email" type="email" name="email" required autocomplete="email"></div>
+              <div class="field"><label for="v-from">Departing from</label><input id="v-from" name="from" list="airport-list" required placeholder="e.g. YYZ"></div>
+              <div class="field"><label for="v-to">Where to?</label><input id="v-to" name="destination" required placeholder="e.g. Riviera Maya, Punta Cana, open to ideas"></div>
+              <div class="field"><label for="v-dates">Dates / month</label><input id="v-dates" name="dates" required placeholder="e.g. 7 nights in March"></div>
+              <div class="field"><label for="v-pax">Travellers</label><input id="v-pax" name="travellers" required placeholder="e.g. 2 adults, 1 child (age 7)"></div>
+              <div class="field"><label for="v-stars">Resort level</label><select id="v-stars" name="resort_level"><option>3★ value</option><option selected>4★ comfort</option><option>5★ luxury</option><option>Adults-only</option><option>Family-friendly</option></select></div>
+              <div class="field"><label for="v-budget">Total budget (CAD)</label><select id="v-budget" name="budget"><option>Under $2,000</option><option>$2,000–$4,000</option><option>$4,000–$7,000</option><option>$7,000+</option></select></div>
+              <div class="field full"><label for="v-notes">Must-haves</label><textarea id="v-notes" name="notes" placeholder="Beach type, kids club, à la carte restaurants, quiet resort…"></textarea></div>
+              <label class="consent full"><input type="checkbox" name="consent" value="Share with licensed advisor: yes" required> Share my request with one licensed travel advisor so they can contact me with options.</label>
+            </div>
+            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn--primary btn--block" type="submit" style="margin-top:16px">Find my vacation deal</button>
+          </form>
+          <div class="form-success"><div class="ok"><svg class="i"><use href="#i-check"/></svg></div><h3>We're on it</h3><p class="muted">An advisor will reach out within 1–2 business days.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="p-partner" aria-labelledby="t-partner" hidden>
+      <div class="split" style="align-items:start">
+        <div>
+          <h3>Travel agencies, tour operators, airlines and hotels</h3>
+          <p class="muted">Receive qualified, consented leads from Canadians actively planning trips: group travel, destination weddings and vacation packages. Pay-per-lead, revenue-share and exclusive-region options.</p>
+          <p><a class="link-arrow" href="{{ '/advertise/' | relative_url }}">See advertising &amp; sponsorship options <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+        </div>
+        <div class="form-card" data-form-holder>
+          <form data-form="Lead Partner Application" novalidate>
+            <div class="form-grid">
+              <div class="field"><label for="p-co">Company</label><input id="p-co" name="company" required autocomplete="organization"></div>
+              <div class="field"><label for="p-name">Your name</label><input id="p-name" name="name" required autocomplete="name"></div>
+              <div class="field"><label for="p-email">Work email</label><input id="p-email" type="email" name="email" required autocomplete="email"></div>
+              <div class="field"><label for="p-web">Website</label><input id="p-web" type="url" name="website" placeholder="https://"></div>
+              <div class="field"><label for="p-type">Business type</label><select id="p-type" name="business_type" required><option value="">Select…</option><option>Travel agency / advisor</option><option>Tour operator</option><option>Airline</option><option>Hotel / resort</option><option>Travel insurance</option><option>Other</option></select></div>
+              <div class="field"><label for="p-int">Interested in</label><select id="p-int" name="lead_type"><option>Group travel leads</option><option>Vacation package leads</option><option>Destination wedding leads</option><option>All of the above</option></select></div>
+              <div class="field full"><label for="p-msg">Regions served / licence number / notes</label><textarea id="p-msg" name="message"></textarea></div>
+            </div>
+            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn--primary btn--block" type="submit" style="margin-top:16px">Apply to become a partner</button>
+          </form>
+          <div class="form-success"><div class="ok"><svg class="i"><use href="#i-check"/></svg></div><h3>Thanks, partner</h3><p class="muted">We'll reply with our partner kit shortly.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm section--alt">
+  <div class="container narrow">
+    <div class="section-head section-head--center"><p class="eyebrow">Free vs Pro</p><h2>Everything essential is free</h2></div>
+    <div class="table-wrap">
+      <table class="compare">
+        <thead><tr><th>Feature</th><th>Free</th><th>Pro (waitlist)</th></tr></thead>
+        <tbody>
+          <tr><td>Economy deals from up to 3 airports</td><td class="y">✓</td><td class="y">✓</td></tr>
+          <tr><td>Mistake-fare alerts</td><td class="y">✓</td><td class="y">✓ (sent first)</td></tr>
+          <tr><td>Weekly digest + guides + tools</td><td class="y">✓</td><td class="y">✓</td></tr>
+          <tr><td>Premium economy &amp; business-class deals</td><td class="n">—</td><td class="y">✓</td></tr>
+          <tr><td>Points &amp; award-seat sweet spots</td><td class="n">—</td><td class="y">✓</td></tr>
+          <tr><td>Unlimited airports and SMS alerts</td><td class="n">—</td><td class="y">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine ta-c">CheapFly Pro is planned, not yet available. Joining the waitlist is free and creates no obligation.</p>
+    {% include faq.html items=page.faq %}
+  </div>
+</section>

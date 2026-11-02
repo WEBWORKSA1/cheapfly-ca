@@ -1,0 +1,29 @@
+---
+layout: page
+title: "Cheap Flight Guides for Canadians"
+crumb: "Guides"
+description: "Practical, original guides to finding cheap flights from Canada: booking windows, mistake fares, passenger rights, budget airlines, points and money-saving hacks."
+permalink: /guides/
+eyebrow: "The CheapFly playbook"
+lead: "Everything we know about flying for less from Canada, written for real trips. Filter by topic or search."
+wide: true
+---
+{%- assign cats = site.guides | map: "category" | uniq | sort -%}
+<div class="container section-sm" data-filter-root=".guide-card">
+  <div class="filters" data-filter-group="cat" role="group" aria-label="Filter by topic">
+    <span class="filters__label">Topic</span>
+    <button class="chip-toggle" type="button" data-val="all" aria-pressed="true">All</button>
+    {%- for c in cats %}<button class="chip-toggle" type="button" data-val="{{ c }}" aria-pressed="false">{{ c }}</button>{% endfor %}
+    <label class="filter-search" style="margin-left:auto"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg><span class="sr-only">Search guides</span><input type="search" data-filter-search placeholder="Search guides"></label>
+  </div>
+  <p class="count" data-filter-count aria-live="polite"></p>
+  {%- assign feat = site.guides | where: "featured", true -%}
+  {%- assign rest = site.guides | where_exp: "g", "g.featured != true" | sort: "title" -%}
+  {%- assign all = feat | concat: rest -%}
+  <div class="grid grid-3">
+    {%- for g in all %}{% include guide-card.html g=g %}{% endfor %}
+  </div>
+  <p class="empty" data-filter-empty hidden>No guides match that search.</p>
+  {% include ad.html slot="incontent" %}
+  {% include alert-cta.html source="guides-index" %}
+</div>
