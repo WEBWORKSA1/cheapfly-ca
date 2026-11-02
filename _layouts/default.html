@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+{% include head.html %}
+</head>
+<body class="{{ page.body_class }}">
+{% include icons.html %}
+{% include header.html %}
+<main id="main">
+{{ content }}
+</main>
+{% include footer.html %}
+<datalist id="airport-list"></datalist>
+<script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
+{%- if page.tool %}
+<script>window.CF_DATA={carryon:{{ site.data.carryon | jsonify }},appr:{{ site.data.appr | jsonify }}};</script>
+<script src="{{ '/assets/js/tools.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>{% endif %}
+</body>
+</html>

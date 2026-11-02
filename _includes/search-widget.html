@@ -1,0 +1,52 @@
+<form class="search-widget{% if include.compact %} search-widget--compact{% endif %}" data-search novalidate aria-label="Flight search">
+  <div class="sw__top">
+    <div class="seg" role="radiogroup" aria-label="Trip type">
+      <label><input type="radio" name="trip" value="return" checked><span>Return</span></label>
+      <label><input type="radio" name="trip" value="oneway"><span>One-way</span></label>
+    </div>
+    <div class="sw__selects">
+      <label class="sr-only" for="sw-pax{{ include.id }}">Travellers</label>
+      <select id="sw-pax{{ include.id }}" name="adults">
+        {%- for n in (1..9) %}<option value="{{ n }}">{{ n }} adult{% if n > 1 %}s{% endif %}</option>{% endfor %}
+      </select>
+      <label class="sr-only" for="sw-cabin{{ include.id }}">Cabin</label>
+      <select id="sw-cabin{{ include.id }}" name="cabin">
+        <option value="economy">Economy</option>
+        <option value="premium">Premium economy</option>
+        <option value="business">Business</option>
+        <option value="first">First</option>
+      </select>
+    </div>
+  </div>
+  <div class="sw__grid">
+    <div class="field field--from">
+      <label for="sw-from{{ include.id }}">From</label>
+      <input id="sw-from{{ include.id }}" name="from" list="airport-list" placeholder="YYZ, Toronto…" value="{{ include.from }}" autocomplete="off" required>
+    </div>
+    <button class="sw__swap icon-btn" type="button" data-swap aria-label="Swap origin and destination"><svg class="i" aria-hidden="true"><use href="#i-swap"/></svg></button>
+    <div class="field field--to">
+      <label for="sw-to{{ include.id }}">To</label>
+      <input id="sw-to{{ include.id }}" name="to" list="airport-list" placeholder="Anywhere" value="{{ include.to }}" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="sw-dep{{ include.id }}">Depart</label>
+      <input id="sw-dep{{ include.id }}" name="depart" type="date" required>
+    </div>
+    <div class="field field--ret">
+      <label for="sw-ret{{ include.id }}">Return</label>
+      <input id="sw-ret{{ include.id }}" name="return" type="date">
+    </div>
+  </div>
+  <div class="sw__bottom">
+    <div class="sw__engines" role="radiogroup" aria-label="Search engine">
+      <label><input type="radio" name="engine" value="google" checked><span>Google Flights</span></label>
+      <label><input type="radio" name="engine" value="skyscanner"><span>Skyscanner</span></label>
+      <label><input type="radio" name="engine" value="kayak"><span>KAYAK</span></label>
+      <label><input type="radio" name="engine" value="expedia"><span>Expedia</span></label>
+      <label><input type="radio" name="engine" value="momondo"><span>Momondo</span></label>
+    </div>
+    <button class="btn btn--accent btn--lg sw__go" type="submit"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg>Search flights</button>
+  </div>
+  <p class="sw__also" hidden>Compare the same trip on: <span data-also></span></p>
+  <p class="sw__note">Opens the search on the site you choose. CheapFly never charges booking fees.</p>
+</form>

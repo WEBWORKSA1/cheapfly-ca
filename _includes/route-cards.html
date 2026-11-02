@@ -1,0 +1,33 @@
+{%- comment -%} Boarding-pass style price-watch cards. Params: from, to, limit {%- endcomment -%}
+{%- assign rts = site.data.routes -%}
+{%- if include.from %}{% assign rts = rts | where: "from", include.from %}{% endif -%}
+{%- if include.to %}{% assign rts = rts | where: "to", include.to %}{% endif -%}
+{%- assign rts = rts | sort: "deal" -%}
+{%- if rts.size > 0 %}
+<div class="pass-grid">
+  {%- for r in rts limit: include.limit | default: 60 %}
+  <article class="pass" data-from="{{ r.from }}" data-region="{{ r.region }}" data-deal="{{ r.deal }}" data-text="{{ r.from }} {{ r.from_city }} {{ r.to }} {{ r.to_city }} {{ r.country }}">
+    <div class="pass__main">
+      <div class="pass__route">
+        <div><span class="pass__code">{{ r.from }}</span><span class="pass__city">{{ r.from_city }}</span></div>
+        <svg class="i pass__plane" aria-hidden="true"><use href="#i-plane"/></svg>
+        <div class="ta-r"><span class="pass__code">{{ r.to }}</span><span class="pass__city">{{ r.to_city }}</span></div>
+      </div>
+      <dl class="pass__meta">
+        <div><dt>Best months</dt><dd>{{ r.best_months }}</dd></div>
+        <div><dt>Flight</dt><dd>{{ r.flight_time }}{% if r.nonstop %} · nonstop{% endif %}</dd></div>
+        <div><dt>Typical return</dt><dd>${{ r.typical }}</dd></div>
+      </dl>
+      {%- if r.alert %}<p class="pass__warn"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg>{{ r.alert }}</p>{% endif %}
+    </div>
+    <div class="pass__stub">
+      <span class="pass__label">Deal under</span>
+      <span class="pass__price">${{ r.deal }}</span>
+      <a class="btn btn--primary btn--sm" href="https://www.google.com/travel/flights?q=Flights%20from%20{{ r.from }}%20to%20{{ r.to }}&curr=CAD&hl=en-CA" target="_blank" rel="noopener nofollow">Check fares</a>
+      <a class="pass__alert" href="{{ '/deal-alerts/' | relative_url }}?from={{ r.from }}&amp;to={{ r.to }}"><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg>Alert me</a>
+    </div>
+  </article>
+  {%- endfor %}
+</div>
+<p class="fine">"Deal under" is CheapFly's guidance threshold for a great return economy fare in CAD, including taxes, based on historical fare patterns. It is not a live price. Fares change constantly; always confirm on the booking site.</p>
+{%- endif %}

@@ -1,0 +1,61 @@
+---
+layout: default
+---
+{%- assign has_routes = site.data.routes | where: "from", page.code -%}
+<section class="place-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><a href="{{ '/airports/' | relative_url }}">Airports</a><span aria-hidden="true">/</span><span aria-current="page">{{ page.code }}</span></nav>
+    <div class="place-hero__grid">
+      <div>
+        <p class="eyebrow eyebrow--light">{{ page.airport_name }} · {{ page.province }}</p>
+        <h1>{{ page.title }}</h1>
+        <p class="lead">{{ page.description }}</p>
+        {%- if page.hub_for and page.hub_for.size > 0 %}<p class="place-hero__chips">{% for h in page.hub_for %}<span class="chip chip--light">{{ h }} hub</span>{% endfor %}</p>{% endif %}
+      </div>
+      <div class="place-hero__code" aria-hidden="true">{{ page.code }}</div>
+    </div>
+    {% include search-widget.html from=page.code id="-ap" compact=true %}
+  </div>
+</section>
+<div class="container place-layout">
+  <div class="place-main">
+    {%- if has_routes.size > 0 %}
+    <section class="section-xs">
+      <div class="section-head"><h2>Price watch from {{ page.code }}</h2><a class="link-arrow" href="{{ '/deals/' | relative_url }}?from={{ page.code }}">All routes <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      {% include route-cards.html from=page.code limit=8 %}
+    </section>
+    {%- endif %}
+    {% include ad.html slot="top" %}
+    <div class="prose" data-prose>
+      {%- assign parts = content | split: '<h2' -%}
+      {%- for p in parts -%}{%- unless forloop.first -%}<h2{%- endunless -%}{{ p }}{%- if forloop.index == 3 -%}{% include ad.html slot="incontent" %}{%- endif -%}{%- endfor -%}
+    </div>
+    {% capture atitle %}Get deal alerts from {{ page.city }} ({{ page.code }}){% endcapture %}
+    {% include alert-cta.html source="airport" airport=page.code title=atitle %}
+    {% include faq.html items=page.faq %}
+    {% include ad.html slot="bottom" %}
+  </div>
+  <aside class="place-side" aria-label="Airport facts">
+    <div class="side-sticky">
+      <div class="side-card facts">
+        <h3>{{ page.code }} at a glance</h3>
+        <dl>
+          <div><dt>Airport</dt><dd>{{ page.airport_name }}</dd></div>
+          <div><dt>City</dt><dd>{{ page.city }}, {{ page.province }}</dd></div>
+          {%- if page.cheapest_months %}<div><dt>Cheapest months</dt><dd>{{ page.cheapest_months }}</dd></div>{% endif %}
+          {%- if page.airlines %}<div><dt>Airlines</dt><dd>{{ page.airlines | join: ", " }}</dd></div>{% endif %}
+          {%- if page.alternatives and page.alternatives.size > 0 %}<div><dt>Nearby alternatives</dt><dd><ul>{% for a in page.alternatives %}<li>{{ a }}</li>{% endfor %}</ul></dd></div>{% endif %}
+        </dl>
+      </div>
+      {% include ad.html slot="sidebar" %}
+    </div>
+  </aside>
+</div>
+<section class="section-sm related">
+  <div class="container">
+    <div class="section-head"><h2>Other Canadian airports</h2><a class="link-arrow" href="{{ '/airports/' | relative_url }}">All airports <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    <div class="chip-links">
+      {%- for a in site.airports %}{% unless a.url == page.url %}<a class="chip-link" href="{{ a.url | relative_url }}"><strong>{{ a.code }}</strong> {{ a.city }}</a>{% endunless %}{% endfor %}
+    </div>
+  </div>
+</section>

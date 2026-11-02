@@ -1,0 +1,11 @@
+<figure class="video" data-category="{{ include.v.category }}">
+  <button class="yt" type="button" data-yt="{{ include.v.id }}" aria-label="Play video: {{ include.v.title | escape }}">
+    <img src="https://i.ytimg.com/vi/{{ include.v.id }}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+    <span class="yt__play" aria-hidden="true"><svg class="i"><use href="#i-play"/></svg></span>
+  </button>
+  <figcaption>
+    <span class="video__cat">{{ include.v.category }}</span>
+    <strong>{{ include.v.title }}</strong>
+    <span class="video__ch">{{ include.v.channel }} · YouTube</span>
+  </figcaption>
+</figure>

@@ -1,0 +1,33 @@
+---
+layout: default
+tool: true
+---
+<section class="page-hero page-hero--tool">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><a href="{{ '/tools/' | relative_url }}">Tools</a><span aria-hidden="true">/</span><span aria-current="page">{{ page.crumb | default: page.title }}</span></nav>
+    <div class="tool-hero">
+      <span class="tool-hero__icon"><svg class="i" aria-hidden="true"><use href="#i-{{ page.icon | default: 'calculator' }}"/></svg></span>
+      <div>
+        <p class="eyebrow">Free tool · No sign-up</p>
+        <h1>{{ page.title }}</h1>
+        {%- if page.lead %}<p class="lead">{{ page.lead }}</p>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container section-sm">
+  {{ content }}
+  {% include faq.html items=page.faq %}
+  {% include alert-cta.html source="tool" %}
+  {% include ad.html slot="bottom" %}
+</div>
+<section class="section-sm related">
+  <div class="container">
+    <div class="section-head"><h2>More free tools</h2><a class="link-arrow" href="{{ '/tools/' | relative_url }}">All tools <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    <div class="grid grid-3">
+      {%- for t in site.data.tools %}{% assign turl = '/tools/' | append: t.slug | append: '/' %}{% unless turl == page.url %}
+      <a class="card tool-card" href="{{ turl | relative_url }}"><span class="card__icon"><svg class="i" aria-hidden="true"><use href="#i-{{ t.icon }}"/></svg></span><h3>{{ t.name }}</h3><p>{{ t.short }}</p></a>
+      {%- endunless %}{% endfor %}
+    </div>
+  </div>
+</section>

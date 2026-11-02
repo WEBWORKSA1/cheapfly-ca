@@ -1,0 +1,71 @@
+---
+layout: default
+---
+{%- assign words = content | number_of_words -%}
+{%- assign mins = words | divided_by: 220 | plus: 1 -%}
+{%- assign vids = site.data.videos | where: "guide", page.slug -%}
+<article class="article">
+  <header class="article-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><a href="{{ '/guides/' | relative_url }}">Guides</a><span aria-hidden="true">/</span><span aria-current="page">{{ page.category }}</span></nav>
+      <span class="chip chip--light">{{ page.category }}</span>
+      <h1>{{ page.title }}</h1>
+      <p class="lead">{{ page.description }}</p>
+      <p class="byline"><span class="avatar" aria-hidden="true"><svg class="i"><use href="#i-plane"/></svg></span>
+        By <a href="{{ '/about/' | relative_url }}">{{ site.author }}</a> · Updated <time datetime="{{ page.updated | default: page.date | date_to_xmlschema }}">{{ page.updated | default: page.date | date: "%B %-d, %Y" }}</time> · {{ mins }} min read</p>
+    </div>
+  </header>
+  <div class="container article-layout">
+    <div class="article-main">
+      <nav class="toc" data-toc hidden aria-label="On this page"><strong>On this page</strong><ol></ol></nav>
+      {% include ad.html slot="top" %}
+      <div class="prose" data-prose>
+        {%- assign parts = content | split: '<h2' -%}
+        {%- for p in parts -%}{%- unless forloop.first -%}<h2{%- endunless -%}{{ p }}{%- if forloop.index == 3 -%}{% include ad.html slot="incontent" %}{%- endif -%}{%- if forloop.index == 5 -%}{% include alert-cta.html source="guide-mid" variant="slim" %}{%- endif -%}{%- endfor -%}
+      </div>
+      {%- if vids.size > 0 %}
+      <section class="article-video">
+        <h2>Watch: related video</h2>
+        {% assign v0 = vids[0] %}{% include video.html v=v0 %}
+        <p class="fine">Video by a third-party YouTube creator, embedded with privacy-enhanced mode. CheapFly.ca is not affiliated with the creator.</p>
+      </section>
+      {%- endif %}
+      {% include faq.html items=page.faq %}
+      <div class="share" data-share>
+        <span>Share this guide:</span>
+        <button class="btn btn--ghost btn--sm" type="button" data-share-native><svg class="i" aria-hidden="true"><use href="#i-share"/></svg>Share</button>
+        <button class="btn btn--ghost btn--sm" type="button" data-copy-link>Copy link</button>
+        <a class="btn btn--ghost btn--sm" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}">Facebook</a>
+        <a class="btn btn--ghost btn--sm" target="_blank" rel="noopener" href="https://x.com/intent/post?url={{ page.url | absolute_url | url_encode }}&amp;text={{ page.title | url_encode }}">X</a>
+        <a class="btn btn--ghost btn--sm" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}">LinkedIn</a>
+      </div>
+      <p class="fine">General information only, not legal, financial or medical advice. Rules, fees and fares change — confirm details with the airline, booking site or official source before you book. Found an error? <a href="{{ '/contact/' | relative_url }}">Tell our editors</a>.</p>
+      {% include ad.html slot="bottom" %}
+    </div>
+    <aside class="article-side" aria-label="Sidebar">
+      <div class="side-sticky">
+        {% include alert-cta.html source="guide-sidebar" variant="side" title="Free deal alerts" text="Fare drops from your home airport, checked by humans." %}
+        <div class="side-card">
+          <h3>Free tools</h3>
+          <ul class="side-links">
+            {%- for t in site.data.tools limit: 6 %}
+            <li><a href="{{ '/tools/' | append: t.slug | append: '/' | relative_url }}"><svg class="i" aria-hidden="true"><use href="#i-{{ t.icon }}"/></svg>{{ t.name }}</a></li>
+            {%- endfor %}
+          </ul>
+        </div>
+        {% include ad.html slot="sidebar" %}
+      </div>
+    </aside>
+  </div>
+  {%- assign same = site.guides | where: "category", page.category | where_exp: "g", "g.url != page.url" -%}
+  {%- assign others = site.guides | where_exp: "g", "g.category != page.category" | sort: "date" | reverse -%}
+  {%- assign rel = same | concat: others -%}
+  <section class="section-sm related">
+    <div class="container">
+      <div class="section-head"><h2>Keep reading</h2><a class="link-arrow" href="{{ '/guides/' | relative_url }}">All guides <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      <div class="grid grid-3">
+        {%- for g in rel limit: 3 %}{% include guide-card.html g=g %}{% endfor %}
+      </div>
+    </div>
+  </section>
+</article>
