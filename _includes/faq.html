@@ -1,0 +1,13 @@
+{%- if include.items and include.items.size > 0 %}
+<section class="faq" aria-labelledby="faq-title{{ include.id }}">
+  <h2 id="faq-title{{ include.id }}">{{ include.title | default: "Frequently asked questions" }}</h2>
+  <div class="faq__list">
+    {%- for f in include.items %}
+    <details class="faq__item"{% if forloop.first and include.open_first %} open{% endif %}>
+      <summary>{{ f.q }}</summary>
+      <div class="faq__a"><p>{{ f.a }}</p></div>
+    </details>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}

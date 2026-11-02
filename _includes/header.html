@@ -1,0 +1,56 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="topbar" role="region" aria-label="Business inquiries">
+  <div class="container topbar__inner">
+    <span class="topbar__text"><svg class="i" aria-hidden="true"><use href="#i-handshake"/></svg>
+      Interested in this website, domain name, sponsorship, advertisement or partnership?</span>
+    <a class="topbar__link" href="{{ site.contact_cta_url }}" target="_blank" rel="noopener">Contact us <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+</div>
+<header class="site-header" id="top">
+  <div class="container nav">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="CheapFly.ca home">
+      <img src="{{ '/assets/img/logo-mark.svg' | relative_url }}" width="36" height="36" alt="" aria-hidden="true">
+      <span class="brand__name">CheapFly<span class="brand__tld">.ca</span></span>
+    </a>
+    <nav class="nav__menu" id="nav-menu" aria-label="Main">
+      <button class="icon-btn nav__close" type="button" data-nav-close aria-label="Close menu"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <ul>
+        <li><a href="{{ '/deals/' | relative_url }}" {% if page.url == '/deals/' %}aria-current="page"{% endif %}>Price Watch</a></li>
+        <li><a href="{{ '/guides/' | relative_url }}" {% if page.collection == 'guides' or page.url == '/guides/' %}aria-current="page"{% endif %}>Guides</a></li>
+        <li><a href="{{ '/airports/' | relative_url }}" {% if page.collection == 'airports' or page.url == '/airports/' %}aria-current="page"{% endif %}>Airports</a></li>
+        <li><a href="{{ '/destinations/' | relative_url }}" {% if page.collection == 'destinations' or page.url == '/destinations/' %}aria-current="page"{% endif %}>Destinations</a></li>
+        <li class="has-sub">
+          <button class="nav__subtoggle" aria-expanded="false" aria-controls="sub-tools">Tools <svg class="i chev" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <ul class="nav__sub" id="sub-tools">
+            {%- for t in site.data.tools %}
+            <li><a href="{{ '/tools/' | append: t.slug | append: '/' | relative_url }}"><svg class="i" aria-hidden="true"><use href="#i-{{ t.icon }}"/></svg>{{ t.name }}</a></li>
+            {%- endfor %}
+            <li><a class="nav__all" href="{{ '/tools/' | relative_url }}">All free tools <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          </ul>
+        </li>
+        <li><a href="{{ '/videos/' | relative_url }}" {% if page.url == '/videos/' %}aria-current="page"{% endif %}>Videos</a></li>
+        <li class="has-sub">
+          <button class="nav__subtoggle" aria-expanded="false" aria-controls="sub-community">Community <svg class="i chev" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <ul class="nav__sub" id="sub-community">
+            <li><a href="{{ '/contests/' | relative_url }}"><svg class="i" aria-hidden="true"><use href="#i-trophy"/></svg>Contests &amp; prizes</a></li>
+            <li><a href="{{ '/support/' | relative_url }}"><svg class="i" aria-hidden="true"><use href="#i-heart"/></svg>Support CheapFly</a></li>
+            <li><a href="{{ '/careers/' | relative_url }}"><svg class="i" aria-hidden="true"><use href="#i-briefcase"/></svg>Join the team</a></li>
+            <li><a href="{{ '/advertise/' | relative_url }}"><svg class="i" aria-hidden="true"><use href="#i-megaphone"/></svg>Advertise &amp; partner</a></li>
+            <li><a href="{{ '/about/' | relative_url }}"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg>About us</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a class="btn btn--accent btn--block nav__mobile-cta" href="{{ '/deal-alerts/' | relative_url }}"><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg>Get free deal alerts</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="i i-moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="i i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+      <a class="btn btn--accent btn--sm nav__cta" href="{{ '/deal-alerts/' | relative_url }}"><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg>Free deal alerts</a>
+      <button class="icon-btn nav__burger" id="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg class="i" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>

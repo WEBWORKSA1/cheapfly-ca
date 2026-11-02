@@ -1,0 +1,1003 @@
+# CheapFly.ca route guidance data.
+# deal = CheapFly deal threshold: a GREAT return economy fare incl. taxes, CAD.
+# typical = typical return economy range, CAD. Guidance only, not live prices.
+# Last reviewed: 2026-11-01. Verify schedules (seasonal routes, Cuba service) before relying on them.
+
+- from: "YYZ"
+  from_city: "Toronto"
+  to: "CUN"
+  to_city: "Cancún"
+  country: "Mexico"
+  region: "sun"
+  deal: 399
+  typical: "550–850"
+  best_months: "May–Jun, Sep–Nov"
+  flight_time: "4h"
+  nonstop: true
+
+- from: "YYZ"
+  from_city: "Toronto"
+  to: "PUJ"
+  to_city: "Punta Cana"
+  country: "Dominican Republic"
+  region: "sun"
+  deal: 449
+  typical: "600–950"
+  best_months: "May–Jun, Sep–Nov"
+  flight_time: "4h"
+  nonstop: true
+
+- from: "YYZ"
+  from_city: "Toronto"
+  to: "JFK"
+  to_city: "New York"
+  country: "United States"
+  region: "usa"
+  deal: 249
+  typical: "350–600"
+  best_months: "Jan–Mar, Aug"
+  flight_time: "1h30"
+  nonstop: true
+
+- from: "YYZ"
+  from_city: "Toronto"
+  to: "LHR"
+  to_city: "London"
+  country: "United Kingdom"
+  region: "europe"
+  deal: 599
+  typical: "800–1,300"
+  best_months: "Jan–Mar, Nov"
+  flight_time: "7h"
+  nonstop: true
+
+- from: "YYZ"
+  from_city: "Toronto"
+  to: "FCO"
+  to_city: "Rome"
+  country: "Italy"
+  region: "europe"
+  deal: 749
+  typical: "950–1,500"
+  best_months: "Nov–Mar (excl. holidays)"
+  flight_time: "8h30"
+  nonstop: true
+
+- from: "YYZ"
+  from_city: "Toronto"
+  to: "LIS"
+  to_city: "Lisbon"
+  country: "Portugal"
+  region: "europe"
+  deal: 649
+  typical: "850–1,300"
+  best_months: "Nov–Mar, May"
+  flight_time: "7h"
+  nonstop: true
+
+- from: "YYZ"
+  from_city: "Toronto"
+  to: "HND"
+  to_city: "Tokyo"
+  country: "Japan"
+  region: "asia"
+  deal: 999
+  typical: "1,300–2,000"
+  best_months: "Jan–Mar, Nov"
+  flight_time: "13h"
+  nonstop: true
+
+- from: "YYZ"
+  from_city: "Toronto"
+  to: "MEX"
+  to_city: "Mexico City"
+  country: "Mexico"
+  region: "latam"
+  deal: 449
+  typical: "600–950"
+  best_months: "Jan–Feb, Aug–Nov"
+  flight_time: "4h45"
+  nonstop: true
+
+- from: "YVR"
+  from_city: "Vancouver"
+  to: "LAX"
+  to_city: "Los Angeles"
+  country: "United States"
+  region: "usa"
+  deal: 249
+  typical: "350–600"
+  best_months: "Jan–Mar, Sep–Nov"
+  flight_time: "2h50"
+  nonstop: true
+
+- from: "YVR"
+  from_city: "Vancouver"
+  to: "LAS"
+  to_city: "Las Vegas"
+  country: "United States"
+  region: "usa"
+  deal: 249
+  typical: "350–600"
+  best_months: "Jan–Feb, May, Sep–Nov"
+  flight_time: "2h30"
+  nonstop: true
+
+- from: "YVR"
+  from_city: "Vancouver"
+  to: "HNL"
+  to_city: "Honolulu"
+  country: "United States"
+  region: "usa"
+  deal: 549
+  typical: "700–1,100"
+  best_months: "Late Jan–Mar, Apr–May, Sep–Nov"
+  flight_time: "6h"
+  nonstop: true
+
+- from: "YVR"
+  from_city: "Vancouver"
+  to: "HND"
+  to_city: "Tokyo"
+  country: "Japan"
+  region: "asia"
+  deal: 899
+  typical: "1,100–1,800"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "10h"
+  nonstop: true
+
+- from: "YVR"
+  from_city: "Vancouver"
+  to: "LHR"
+  to_city: "London"
+  country: "United Kingdom"
+  region: "europe"
+  deal: 749
+  typical: "1,000–1,600"
+  best_months: "Jan–Mar, Nov"
+  flight_time: "9h30"
+  nonstop: true
+
+- from: "YVR"
+  from_city: "Vancouver"
+  to: "MEX"
+  to_city: "Mexico City"
+  country: "Mexico"
+  region: "latam"
+  deal: 449
+  typical: "600–950"
+  best_months: "Jan–Feb, Apr–May, Sep–Nov"
+  flight_time: "5h"
+  nonstop: true
+
+- from: "YVR"
+  from_city: "Vancouver"
+  to: "CUN"
+  to_city: "Cancún"
+  country: "Mexico"
+  region: "sun"
+  deal: 549
+  typical: "700–1,100"
+  best_months: "Late Apr–May, Nov–early Dec"
+  flight_time: "5h30"
+  nonstop: true
+
+- from: "YVR"
+  from_city: "Vancouver"
+  to: "YYZ"
+  to_city: "Toronto"
+  country: "Canada"
+  region: "canada"
+  deal: 299
+  typical: "400–750"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "4h30"
+  nonstop: true
+
+- from: "YUL"
+  from_city: "Montréal"
+  to: "CDG"
+  to_city: "Paris"
+  country: "France"
+  region: "europe"
+  deal: 549
+  typical: "750–1,200"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "7h"
+  nonstop: true
+
+- from: "YUL"
+  from_city: "Montréal"
+  to: "LIS"
+  to_city: "Lisbon"
+  country: "Portugal"
+  region: "europe"
+  deal: 599
+  typical: "800–1,200"
+  best_months: "Nov–Mar, May"
+  flight_time: "6h30"
+  nonstop: true
+
+- from: "YUL"
+  from_city: "Montréal"
+  to: "FCO"
+  to_city: "Rome"
+  country: "Italy"
+  region: "europe"
+  deal: 699
+  typical: "900–1,400"
+  best_months: "Nov–Mar (excl. holidays)"
+  flight_time: "8h"
+  nonstop: true
+
+- from: "YUL"
+  from_city: "Montréal"
+  to: "PUJ"
+  to_city: "Punta Cana"
+  country: "Dominican Republic"
+  region: "sun"
+  deal: 449
+  typical: "600–950"
+  best_months: "May–Jun, Sep–Nov"
+  flight_time: "4h"
+  nonstop: true
+
+- from: "YUL"
+  from_city: "Montréal"
+  to: "VRA"
+  to_city: "Varadero"
+  country: "Cuba"
+  region: "sun"
+  deal: 449
+  typical: "600–900"
+  best_months: "Nov–Apr (verify 2026–27 service)"
+  flight_time: "3h30"
+  nonstop: true
+  alert: "Canadian airline service to Cuba was suspended in 2026. Check that flights are operating before you plan."
+
+- from: "YUL"
+  from_city: "Montréal"
+  to: "JFK"
+  to_city: "New York"
+  country: "United States"
+  region: "usa"
+  deal: 249
+  typical: "350–600"
+  best_months: "Jan–Mar, Aug"
+  flight_time: "1h30"
+  nonstop: true
+
+- from: "YUL"
+  from_city: "Montréal"
+  to: "MCO"
+  to_city: "Orlando"
+  country: "United States"
+  region: "usa"
+  deal: 349
+  typical: "450–750"
+  best_months: "Jan, Apr–May, Sep–Nov"
+  flight_time: "3h15"
+  nonstop: true
+
+- from: "YYC"
+  from_city: "Calgary"
+  to: "CUN"
+  to_city: "Cancún"
+  country: "Mexico"
+  region: "sun"
+  deal: 499
+  typical: "650–1,000"
+  best_months: "Late Jan–Feb, Late Apr–May, Nov"
+  flight_time: "5h"
+  nonstop: true
+
+- from: "YYC"
+  from_city: "Calgary"
+  to: "LAS"
+  to_city: "Las Vegas"
+  country: "United States"
+  region: "usa"
+  deal: 249
+  typical: "350–600"
+  best_months: "Jan–Feb, May, Sep–Nov"
+  flight_time: "2h30"
+  nonstop: true
+
+- from: "YYC"
+  from_city: "Calgary"
+  to: "HNL"
+  to_city: "Honolulu"
+  country: "United States"
+  region: "usa"
+  deal: 599
+  typical: "750–1,200"
+  best_months: "Late Jan–Mar, Apr–May, Sep–Nov"
+  flight_time: "7h"
+  nonstop: true
+
+- from: "YYC"
+  from_city: "Calgary"
+  to: "LHR"
+  to_city: "London"
+  country: "United Kingdom"
+  region: "europe"
+  deal: 749
+  typical: "950–1,500"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "8h45"
+  nonstop: true
+
+- from: "YYC"
+  from_city: "Calgary"
+  to: "NRT"
+  to_city: "Tokyo (Narita)"
+  country: "Japan"
+  region: "asia"
+  deal: 999
+  typical: "1,300–2,000"
+  best_months: "Jan–Mar, Nov"
+  flight_time: "10h30"
+  nonstop: true
+
+- from: "YYC"
+  from_city: "Calgary"
+  to: "YVR"
+  to_city: "Vancouver"
+  country: "Canada"
+  region: "canada"
+  deal: 199
+  typical: "280–500"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "1h30"
+  nonstop: true
+
+- from: "YYC"
+  from_city: "Calgary"
+  to: "MBJ"
+  to_city: "Montego Bay"
+  country: "Jamaica"
+  region: "sun"
+  deal: 549
+  typical: "700–1,050"
+  best_months: "Late Jan–Feb, Late Apr, Nov–early Dec"
+  flight_time: "5h30"
+  nonstop: true
+
+- from: "YEG"
+  from_city: "Edmonton"
+  to: "CUN"
+  to_city: "Cancún"
+  country: "Mexico"
+  region: "sun"
+  deal: 499
+  typical: "650–1,000"
+  best_months: "Late Jan–Feb, Late Apr–May, Nov"
+  flight_time: "5h"
+  nonstop: true
+
+- from: "YEG"
+  from_city: "Edmonton"
+  to: "LAS"
+  to_city: "Las Vegas"
+  country: "United States"
+  region: "usa"
+  deal: 249
+  typical: "350–600"
+  best_months: "Jan–Feb, May, Sep–Nov"
+  flight_time: "2h45"
+  nonstop: true
+
+- from: "YEG"
+  from_city: "Edmonton"
+  to: "KEF"
+  to_city: "Reykjavík"
+  country: "Iceland"
+  region: "europe"
+  deal: 649
+  typical: "850–1,300"
+  best_months: "Jun, Sep (summer seasonal)"
+  flight_time: "7h"
+  nonstop: true
+
+- from: "YEG"
+  from_city: "Edmonton"
+  to: "MBJ"
+  to_city: "Montego Bay"
+  country: "Jamaica"
+  region: "sun"
+  deal: 549
+  typical: "700–1,100"
+  best_months: "Late Jan–Feb, Late Apr, Dec (excl. holidays)"
+  flight_time: "5h30"
+  nonstop: true
+
+- from: "YEG"
+  from_city: "Edmonton"
+  to: "LHR"
+  to_city: "London"
+  country: "United Kingdom"
+  region: "europe"
+  deal: 799
+  typical: "1,000–1,600"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "10h+ (1 stop)"
+  nonstop: false
+
+- from: "YEG"
+  from_city: "Edmonton"
+  to: "YYZ"
+  to_city: "Toronto"
+  country: "Canada"
+  region: "canada"
+  deal: 299
+  typical: "400–700"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "3h45"
+  nonstop: true
+
+- from: "YOW"
+  from_city: "Ottawa"
+  to: "CUN"
+  to_city: "Cancún"
+  country: "Mexico"
+  region: "sun"
+  deal: 449
+  typical: "600–900"
+  best_months: "Late Jan–Feb, May, Nov"
+  flight_time: "4h"
+  nonstop: true
+
+- from: "YOW"
+  from_city: "Ottawa"
+  to: "PUJ"
+  to_city: "Punta Cana"
+  country: "Dominican Republic"
+  region: "sun"
+  deal: 479
+  typical: "650–950"
+  best_months: "Late Jan–Feb, May, Nov"
+  flight_time: "4h"
+  nonstop: true
+
+- from: "YOW"
+  from_city: "Ottawa"
+  to: "MCO"
+  to_city: "Orlando"
+  country: "United States"
+  region: "usa"
+  deal: 349
+  typical: "450–750"
+  best_months: "Jan, Apr–May, Sep–Nov"
+  flight_time: "3h"
+  nonstop: true
+
+- from: "YOW"
+  from_city: "Ottawa"
+  to: "LHR"
+  to_city: "London"
+  country: "United Kingdom"
+  region: "europe"
+  deal: 649
+  typical: "850–1,300"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "7h"
+  nonstop: true
+
+- from: "YOW"
+  from_city: "Ottawa"
+  to: "CDG"
+  to_city: "Paris"
+  country: "France"
+  region: "europe"
+  deal: 649
+  typical: "850–1,300"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "7h15"
+  nonstop: true
+
+- from: "YOW"
+  from_city: "Ottawa"
+  to: "VRA"
+  to_city: "Varadero"
+  country: "Cuba"
+  region: "sun"
+  deal: 449
+  typical: "600–900"
+  best_months: "Nov–Apr (verify 2026–27 service)"
+  flight_time: "3h30"
+  nonstop: true
+  alert: "Canadian airline service to Cuba was suspended in 2026. Check that flights are operating before you plan."
+
+- from: "YOW"
+  from_city: "Ottawa"
+  to: "YVR"
+  to_city: "Vancouver"
+  country: "Canada"
+  region: "canada"
+  deal: 349
+  typical: "450–800"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "5h"
+  nonstop: true
+
+- from: "YHZ"
+  from_city: "Halifax"
+  to: "CUN"
+  to_city: "Cancún"
+  country: "Mexico"
+  region: "sun"
+  deal: 499
+  typical: "650–1,000"
+  best_months: "Late Jan–Feb, Nov"
+  flight_time: "4h45"
+  nonstop: true
+
+- from: "YHZ"
+  from_city: "Halifax"
+  to: "MCO"
+  to_city: "Orlando"
+  country: "United States"
+  region: "usa"
+  deal: 399
+  typical: "500–850"
+  best_months: "Jan, Apr–May, Oct–Nov"
+  flight_time: "3h30"
+  nonstop: true
+
+- from: "YHZ"
+  from_city: "Halifax"
+  to: "LHR"
+  to_city: "London"
+  country: "United Kingdom"
+  region: "europe"
+  deal: 549
+  typical: "750–1,200"
+  best_months: "May, Sep–Oct, Jan–Mar"
+  flight_time: "6h"
+  nonstop: true
+
+- from: "YHZ"
+  from_city: "Halifax"
+  to: "LIS"
+  to_city: "Lisbon"
+  country: "Portugal"
+  region: "europe"
+  deal: 599
+  typical: "800–1,200"
+  best_months: "May–Jun, Sep–Oct (summer seasonal)"
+  flight_time: "5h30"
+  nonstop: true
+
+- from: "YHZ"
+  from_city: "Halifax"
+  to: "YYZ"
+  to_city: "Toronto"
+  country: "Canada"
+  region: "canada"
+  deal: 249
+  typical: "350–600"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "2h15"
+  nonstop: true
+
+- from: "YWG"
+  from_city: "Winnipeg"
+  to: "CUN"
+  to_city: "Cancún"
+  country: "Mexico"
+  region: "sun"
+  deal: 499
+  typical: "650–1,000"
+  best_months: "Late Jan–Feb, Late Apr, Nov"
+  flight_time: "4h45"
+  nonstop: true
+
+- from: "YWG"
+  from_city: "Winnipeg"
+  to: "PUJ"
+  to_city: "Punta Cana"
+  country: "Dominican Republic"
+  region: "sun"
+  deal: 549
+  typical: "700–1,050"
+  best_months: "Late Jan–Feb, Nov–early Dec"
+  flight_time: "5h"
+  nonstop: true
+
+- from: "YWG"
+  from_city: "Winnipeg"
+  to: "LAS"
+  to_city: "Las Vegas"
+  country: "United States"
+  region: "usa"
+  deal: 299
+  typical: "400–650"
+  best_months: "Jan–Feb, May, Sep–Nov"
+  flight_time: "3h15"
+  nonstop: true
+
+- from: "YWG"
+  from_city: "Winnipeg"
+  to: "KEF"
+  to_city: "Reykjavík"
+  country: "Iceland"
+  region: "europe"
+  deal: 699
+  typical: "900–1,350"
+  best_months: "Jun, Sep (summer seasonal)"
+  flight_time: "6h"
+  nonstop: true
+
+- from: "YWG"
+  from_city: "Winnipeg"
+  to: "YYZ"
+  to_city: "Toronto"
+  country: "Canada"
+  region: "canada"
+  deal: 249
+  typical: "350–650"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "2h30"
+  nonstop: true
+
+- from: "YQB"
+  from_city: "Québec City"
+  to: "CUN"
+  to_city: "Cancún"
+  country: "Mexico"
+  region: "sun"
+  deal: 449
+  typical: "600–950"
+  best_months: "Late Jan–Feb, May, Nov"
+  flight_time: "4h15"
+  nonstop: true
+
+- from: "YQB"
+  from_city: "Québec City"
+  to: "PUJ"
+  to_city: "Punta Cana"
+  country: "Dominican Republic"
+  region: "sun"
+  deal: 479
+  typical: "650–1,000"
+  best_months: "Late Jan–Feb, May, Nov"
+  flight_time: "4h15"
+  nonstop: true
+
+- from: "YQB"
+  from_city: "Québec City"
+  to: "CDG"
+  to_city: "Paris"
+  country: "France"
+  region: "europe"
+  deal: 649
+  typical: "850–1,300"
+  best_months: "May, Sep–Oct (seasonal)"
+  flight_time: "7h"
+  nonstop: true
+
+- from: "YQB"
+  from_city: "Québec City"
+  to: "VRA"
+  to_city: "Varadero"
+  country: "Cuba"
+  region: "sun"
+  deal: 449
+  typical: "600–950"
+  best_months: "Nov–Apr (verify 2026–27 service)"
+  flight_time: "3h45"
+  nonstop: true
+  alert: "Canadian airline service to Cuba was suspended in 2026. Check that flights are operating before you plan."
+
+- from: "YYJ"
+  from_city: "Victoria"
+  to: "CUN"
+  to_city: "Cancún"
+  country: "Mexico"
+  region: "sun"
+  deal: 549
+  typical: "700–1,100"
+  best_months: "Late Jan–Feb, Late Apr, Nov"
+  flight_time: "5h30"
+  nonstop: true
+
+- from: "YYJ"
+  from_city: "Victoria"
+  to: "PVR"
+  to_city: "Puerto Vallarta"
+  country: "Mexico"
+  region: "sun"
+  deal: 499
+  typical: "650–1,000"
+  best_months: "Late Jan–Feb, Late Apr, Nov"
+  flight_time: "4h45"
+  nonstop: true
+
+- from: "YYJ"
+  from_city: "Victoria"
+  to: "YYZ"
+  to_city: "Toronto"
+  country: "Canada"
+  region: "canada"
+  deal: 349
+  typical: "450–800"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "4h45"
+  nonstop: true
+
+- from: "YYJ"
+  from_city: "Victoria"
+  to: "LAX"
+  to_city: "Los Angeles"
+  country: "United States"
+  region: "usa"
+  deal: 349
+  typical: "450–750"
+  best_months: "Jan–Mar, Sep–Nov"
+  flight_time: "3h+ (1 stop)"
+  nonstop: false
+
+- from: "YLW"
+  from_city: "Kelowna"
+  to: "CUN"
+  to_city: "Cancún"
+  country: "Mexico"
+  region: "sun"
+  deal: 549
+  typical: "700–1,100"
+  best_months: "Late Jan–Feb, Late Apr, Nov"
+  flight_time: "5h15"
+  nonstop: true
+
+- from: "YLW"
+  from_city: "Kelowna"
+  to: "PVR"
+  to_city: "Puerto Vallarta"
+  country: "Mexico"
+  region: "sun"
+  deal: 499
+  typical: "650–1,000"
+  best_months: "Late Jan–Feb, Late Apr, Nov"
+  flight_time: "4h30"
+  nonstop: true
+
+- from: "YLW"
+  from_city: "Kelowna"
+  to: "LAX"
+  to_city: "Los Angeles"
+  country: "United States"
+  region: "usa"
+  deal: 349
+  typical: "450–750"
+  best_months: "Jan–Mar, Sep–Nov"
+  flight_time: "2h45"
+  nonstop: true
+
+- from: "YLW"
+  from_city: "Kelowna"
+  to: "YYZ"
+  to_city: "Toronto"
+  country: "Canada"
+  region: "canada"
+  deal: 349
+  typical: "450–800"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "4h15"
+  nonstop: true
+
+- from: "YXE"
+  from_city: "Saskatoon"
+  to: "CUN"
+  to_city: "Cancún"
+  country: "Mexico"
+  region: "sun"
+  deal: 549
+  typical: "700–1,050"
+  best_months: "Late Jan–Feb, Late Apr, Nov"
+  flight_time: "5h"
+  nonstop: true
+
+- from: "YXE"
+  from_city: "Saskatoon"
+  to: "LAS"
+  to_city: "Las Vegas"
+  country: "United States"
+  region: "usa"
+  deal: 299
+  typical: "400–700"
+  best_months: "Jan–Feb, Late Apr, Nov"
+  flight_time: "3h"
+  nonstop: true
+
+- from: "YXE"
+  from_city: "Saskatoon"
+  to: "PHX"
+  to_city: "Phoenix"
+  country: "United States"
+  region: "usa"
+  deal: 349
+  typical: "450–750"
+  best_months: "Jan–Feb, Late Apr, Nov"
+  flight_time: "3h15"
+  nonstop: true
+
+- from: "YQR"
+  from_city: "Regina"
+  to: "CUN"
+  to_city: "Cancún"
+  country: "Mexico"
+  region: "sun"
+  deal: 549
+  typical: "700–1,050"
+  best_months: "Late Jan–Feb, Late Apr, Nov"
+  flight_time: "5h"
+  nonstop: true
+
+- from: "YQR"
+  from_city: "Regina"
+  to: "SJD"
+  to_city: "Los Cabos"
+  country: "Mexico"
+  region: "sun"
+  deal: 549
+  typical: "700–1,050"
+  best_months: "Late Jan–Feb, Late Apr (winter seasonal)"
+  flight_time: "4h15"
+  nonstop: true
+
+- from: "YQR"
+  from_city: "Regina"
+  to: "YYZ"
+  to_city: "Toronto"
+  country: "Canada"
+  region: "canada"
+  deal: 299
+  typical: "400–750"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "3h25"
+  nonstop: true
+
+- from: "YYT"
+  from_city: "St. John's"
+  to: "LHR"
+  to_city: "London (Gatwick)"
+  country: "United Kingdom"
+  region: "europe"
+  deal: 599
+  typical: "800–1,250"
+  best_months: "May, Sep (summer seasonal)"
+  flight_time: "5h"
+  nonstop: true
+
+- from: "YYT"
+  from_city: "St. John's"
+  to: "DUB"
+  to_city: "Dublin"
+  country: "Ireland"
+  region: "europe"
+  deal: 599
+  typical: "800–1,200"
+  best_months: "May–Jun, Sep (summer seasonal)"
+  flight_time: "4h45"
+  nonstop: true
+
+- from: "YYT"
+  from_city: "St. John's"
+  to: "CUN"
+  to_city: "Cancún"
+  country: "Mexico"
+  region: "sun"
+  deal: 549
+  typical: "700–1,100"
+  best_months: "Late Jan–Feb, Nov"
+  flight_time: "6h+ (usually 1 stop)"
+  nonstop: false
+
+- from: "YYT"
+  from_city: "St. John's"
+  to: "YYZ"
+  to_city: "Toronto"
+  country: "Canada"
+  region: "canada"
+  deal: 299
+  typical: "400–750"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "3h"
+  nonstop: true
+
+- from: "YTZ"
+  from_city: "Toronto"
+  to: "JFK"
+  to_city: "New York (Newark/LaGuardia)"
+  country: "United States"
+  region: "usa"
+  deal: 249
+  typical: "350–600"
+  best_months: "Jan–Feb, Jul–Aug (weekends)"
+  flight_time: "1h30"
+  nonstop: true
+
+- from: "YTZ"
+  from_city: "Toronto"
+  to: "BOS"
+  to_city: "Boston"
+  country: "United States"
+  region: "usa"
+  deal: 279
+  typical: "380–650"
+  best_months: "Jan–Mar, Jul–Aug"
+  flight_time: "1h45"
+  nonstop: true
+
+- from: "YTZ"
+  from_city: "Toronto"
+  to: "ORD"
+  to_city: "Chicago"
+  country: "United States"
+  region: "usa"
+  deal: 249
+  typical: "350–600"
+  best_months: "Jan–Mar, Jul–Aug"
+  flight_time: "2h"
+  nonstop: true
+
+- from: "YTZ"
+  from_city: "Toronto"
+  to: "YUL"
+  to_city: "Montréal"
+  country: "Canada"
+  region: "canada"
+  deal: 179
+  typical: "250–450"
+  best_months: "Jan–Feb, Jul–Aug (weekends)"
+  flight_time: "1h15"
+  nonstop: true
+
+- from: "YHM"
+  from_city: "Hamilton"
+  to: "YVR"
+  to_city: "Vancouver"
+  country: "Canada"
+  region: "canada"
+  deal: 299
+  typical: "400–700"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "4h45"
+  nonstop: true
+
+- from: "YHM"
+  from_city: "Hamilton"
+  to: "YYC"
+  to_city: "Calgary"
+  country: "Canada"
+  region: "canada"
+  deal: 279
+  typical: "380–650"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "4h15"
+  nonstop: true
+
+- from: "YHM"
+  from_city: "Hamilton"
+  to: "YHZ"
+  to_city: "Halifax"
+  country: "Canada"
+  region: "canada"
+  deal: 199
+  typical: "280–500"
+  best_months: "Jan–Mar, Oct–Nov"
+  flight_time: "2h"
+  nonstop: true
+
+- from: "YHM"
+  from_city: "Hamilton"
+  to: "MBJ"
+  to_city: "Montego Bay"
+  country: "Jamaica"
+  region: "sun"
+  deal: 499
+  typical: "650–950"
+  best_months: "Jan–Feb, Late Apr (seasonal from Dec 2026)"
+  flight_time: "4h"
+  nonstop: true

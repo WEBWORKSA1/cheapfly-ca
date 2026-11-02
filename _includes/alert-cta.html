@@ -1,0 +1,20 @@
+<aside class="alert-cta{% if include.variant %} alert-cta--{{ include.variant }}{% endif %}" aria-label="Free deal alerts">
+  <div class="alert-cta__icon"><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg></div>
+  <div class="alert-cta__body">
+    <h3>{{ include.title | default: "Get deals like this in your inbox — free" }}</h3>
+    <p>{{ include.text | default: "Choose your home airport. We send fare drops, mistake fares and sun deals worth booking — nothing else." }}</p>
+    <form class="quick-alert quick-alert--inline" data-form="Deal Alerts ({{ include.source | default: 'inline' }})" novalidate>
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" aria-label="Email address">
+      <select name="home_airport" required aria-label="Home airport">
+        <option value="">Home airport</option>
+        {%- for a in site.data.home_airports %}<option value="{{ a.code }}"{% if include.airport == a.code %} selected{% endif %}>{{ a.city }} ({{ a.code }})</option>{% endfor %}
+        <option value="Other">Other</option>
+      </select>
+      {%- if include.interest %}<input type="hidden" name="interest" value="{{ include.interest }}">{% endif %}
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn--accent" type="submit">Get free alerts</button>
+      <label class="consent"><input type="checkbox" name="consent" value="yes" required> Email me flight deals. Unsubscribe anytime.</label>
+    </form>
+    <a class="alert-cta__more" href="{{ '/deal-alerts/' | relative_url }}">Want alerts for specific destinations, months or budgets? Personalise them <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+</aside>

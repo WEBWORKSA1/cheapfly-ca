@@ -1,0 +1,9 @@
+<article class="card guide-card" data-cat="{{ include.g.category }}" data-text="{{ include.g.title | escape }} {{ include.g.description | escape }} {{ include.g.category }}">
+  <a class="card__link" href="{{ include.g.url | relative_url }}">
+    <span class="card__icon card__icon--{{ include.g.category | slugify }}"><svg class="i" aria-hidden="true"><use href="#i-{{ include.g.icon | default: 'compass' }}"/></svg></span>
+    <span class="chip">{{ include.g.category }}</span>
+    <h3>{{ include.g.title }}</h3>
+    <p>{{ include.g.description | truncate: 140 }}</p>
+    <span class="card__more">Read guide <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+  </a>
+</article>

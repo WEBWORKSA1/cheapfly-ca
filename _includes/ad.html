@@ -1,0 +1,9 @@
+{%- comment -%} Manual ad unit. Renders only when a slot ID is set in _config.yml (adsense.slots). Auto ads need no slot. {%- endcomment -%}
+{%- assign slot_id = site.adsense.slots[include.slot] -%}
+{%- if page.ads != false and slot_id and slot_id != "" %}
+<div class="ad ad--{{ include.slot }}" aria-label="Advertisement">
+  <span class="ad__label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="{{ site.adsense.client }}" data-ad-slot="{{ slot_id }}" data-ad-format="{{ include.format | default: 'auto' }}" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{%- endif %}

@@ -1,0 +1,115 @@
+<section class="footer-cta" aria-labelledby="footer-cta-title">
+  <div class="container footer-cta__inner">
+    <div>
+      <p class="eyebrow eyebrow--light">Free · Canadian · No spam</p>
+      <h2 id="footer-cta-title">Never overpay for a flight again.</h2>
+      <p>Pick your home airport and get hand-checked fare drops, mistake fares and sun-deal alerts in your inbox.</p>
+    </div>
+    <form class="quick-alert" data-form="Deal Alerts (footer)" novalidate>
+      <label class="sr-only" for="fa-email">Email address</label>
+      <input id="fa-email" type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <label class="sr-only" for="fa-airport">Home airport</label>
+      <select id="fa-airport" name="home_airport" required>
+        <option value="">Home airport</option>
+        {%- for a in site.data.home_airports %}<option value="{{ a.code }}">{{ a.city }} ({{ a.code }})</option>{% endfor %}
+        <option value="Other">Other</option>
+      </select>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn--accent" type="submit">Get alerts</button>
+      <label class="consent"><input type="checkbox" name="consent" value="yes" required> I agree to receive deal emails from CheapFly.ca. Unsubscribe anytime.</label>
+    </form>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand--footer" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/img/logo-mark.svg' | relative_url }}" width="34" height="34" alt="" aria-hidden="true">
+        <span class="brand__name">CheapFly<span class="brand__tld">.ca</span></span>
+      </a>
+      <p>{{ site.tagline }}. Independent deal alerts, price-watch targets, guides and free tools that help Canadians fly for less.</p>
+      <div class="footer-social">
+        {%- for s in site.social %}{% if s[1] != "" %}<a href="{{ s[1] }}" target="_blank" rel="noopener" aria-label="{{ s[0] | capitalize }}">{{ s[0] | capitalize }}</a>{% endif %}{% endfor %}
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </div>
+    </div>
+    <nav aria-label="Deals and planning">
+      <h3>Find deals</h3>
+      <ul>
+        <li><a href="{{ '/deal-alerts/' | relative_url }}">Free deal alerts</a></li>
+        <li><a href="{{ '/deals/' | relative_url }}">Price watch</a></li>
+        <li><a href="{{ '/tools/flight-search/' | relative_url }}">Flight search</a></li>
+        <li><a href="{{ '/airports/' | relative_url }}">Canadian airports</a></li>
+        <li><a href="{{ '/destinations/' | relative_url }}">Destinations</a></li>
+        <li><a href="{{ '/videos/' | relative_url }}">Videos</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Guides and tools">
+      <h3>Learn &amp; plan</h3>
+      <ul>
+        <li><a href="{{ '/guides/' | relative_url }}">All guides</a></li>
+        <li><a href="{{ '/guides/how-to-find-cheap-flights-from-canada/' | relative_url }}">Cheap flights playbook</a></li>
+        <li><a href="{{ '/guides/canada-air-passenger-rights-appr-compensation/' | relative_url }}">Passenger rights</a></li>
+        <li><a href="{{ '/tools/' | relative_url }}">Free tools</a></li>
+        <li><a href="{{ '/tools/flight-delay-compensation/' | relative_url }}">Delay compensation</a></li>
+        <li><a href="{{ '/faq/' | relative_url }}">FAQ</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Company">
+      <h3>CheapFly</h3>
+      <ul>
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        <li><a href="{{ '/advertise/' | relative_url }}">Advertise &amp; partner</a></li>
+        <li><a href="{{ '/support/' | relative_url }}">Support us</a></li>
+        <li><a href="{{ '/contests/' | relative_url }}">Contests</a></li>
+        <li><a href="{{ '/careers/' | relative_url }}">Careers</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Legal">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="{{ '/privacy/' | relative_url }}">Privacy policy</a></li>
+        <li><a href="{{ '/terms/' | relative_url }}">Terms of use</a></li>
+        <li><a href="{{ '/cookies/' | relative_url }}">Cookie policy</a></li>
+        <li><a href="{{ '/disclaimer/' | relative_url }}">Disclaimer &amp; trademarks</a></li>
+        <li><a href="{{ '/editorial-policy/' | relative_url }}">Editorial policy</a></li>
+        <li><a href="{{ '/site-map/' | relative_url }}">Site map</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container footer-legal">
+    <p><strong>Independent site.</strong> CheapFly.ca does not sell tickets and is not a travel agency. Prices shown are guidance thresholds, not live fares; always confirm the final price with the airline or booking site. Some pages show advertising from Google AdSense.</p>
+    <p><strong>Trademark &amp; copyright notice.</strong> "CheapFly.ca" is used as the descriptive name of this website and its domain. CheapFly.ca is not affiliated with, endorsed by or sponsored by any airline, airport, online travel agency, fare search engine (including KAYAK, Skyscanner, Google Flights, Expedia or Momondo) or government agency. All third-party names and trademarks belong to their respective owners and are used for identification only. Original text, design and code &copy; {{ site.time | date: '%Y' }} CheapFly.ca. All rights reserved. <a href="{{ '/disclaimer/' | relative_url }}">Read the full disclosure</a>.</p>
+  </div>
+</footer>
+<a class="to-top" href="#top" aria-label="Back to top"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+<div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Cookie notice" hidden>
+  <p>We use cookies to run this site, measure traffic and show ads from Google, which may personalise ads. See our <a href="{{ '/cookies/' | relative_url }}">cookie policy</a>.</p>
+  <div class="cookie__actions">
+    <button class="btn btn--ghost btn--sm" type="button" data-consent="essential">Essential only</button>
+    <button class="btn btn--primary btn--sm" type="button" data-consent="all">Accept all</button>
+  </div>
+</div>
+{%- unless page.no_popup %}
+<div class="modal" id="exit-modal" role="dialog" aria-modal="true" aria-labelledby="exit-title" hidden>
+  <div class="modal__card">
+    <button class="icon-btn modal__close" type="button" data-close aria-label="Close"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div class="modal__badge"><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg></div>
+    <h2 id="exit-title">Before you go — want the next fare drop?</h2>
+    <p>Free alerts for your home airport. Mistake fares, sun deals and Europe sales, hand-checked before they reach you.</p>
+    <form class="stack" data-form="Deal Alerts (exit popup)" novalidate>
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" aria-label="Email address">
+      <select name="home_airport" required aria-label="Home airport">
+        <option value="">Choose your home airport</option>
+        {%- for a in site.data.home_airports %}<option value="{{ a.code }}">{{ a.city }} ({{ a.code }})</option>{% endfor %}
+        <option value="Other">Other</option>
+      </select>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="consent"><input type="checkbox" name="consent" value="yes" required> Yes, email me flight deals. I can unsubscribe anytime.</label>
+      <button class="btn btn--accent btn--block" type="submit">Send me deals</button>
+    </form>
+  </div>
+</div>
+{%- endunless %}
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>

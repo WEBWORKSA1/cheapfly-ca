@@ -1,0 +1,60 @@
+{%- assign page_title = page.seo_title | default: page.title -%}
+{%- if page.url == "/" -%}{%- assign full_title = site.title | append: " — Cheap Flights & Deal Alerts for Canadians" -%}
+{%- else -%}{%- assign full_title = page_title | append: " | " | append: site.title -%}{%- endif -%}
+{%- assign meta_desc = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 165 -%}
+{%- assign canonical = page.url | replace: "index.html", "" | absolute_url -%}
+{%- assign og_png = site.static_files | where: "path", "/assets/img/og-image.png" -%}
+{%- assign fav_png = site.static_files | where: "path", "/assets/img/favicon-32.png" -%}
+{%- assign touch_png = site.static_files | where: "path", "/assets/img/apple-touch-icon.png" -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ full_title | escape }}</title>
+<meta name="description" content="{{ meta_desc | escape }}">
+{%- if page.keywords %}
+<meta name="keywords" content="{{ page.keywords | join: ', ' | escape }}">{% endif %}
+<link rel="canonical" href="{{ canonical }}">
+{%- if page.noindex %}
+<meta name="robots" content="noindex, follow">{% else %}
+<meta name="robots" content="index, follow, max-image-preview:large">{% endif %}
+<meta name="author" content="{{ site.author }}">
+<meta name="theme-color" content="#0b1b3b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#1d5bff" media="(prefers-color-scheme: light)">
+<meta property="og:type" content="{% if page.collection == 'guides' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="{{ site.locale }}">
+<meta property="og:title" content="{{ page_title | default: site.title | escape }}">
+<meta property="og:description" content="{{ meta_desc | escape }}">
+<meta property="og:url" content="{{ canonical }}">
+{%- if og_png.size > 0 %}
+<meta property="og:image" content="{{ '/assets/img/og-image.png' | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">{% else %}
+<meta name="twitter:card" content="summary">{% endif %}
+<meta name="twitter:title" content="{{ page_title | default: site.title | escape }}">
+<meta name="twitter:description" content="{{ meta_desc | escape }}">
+{%- if og_png.size > 0 %}
+<meta name="twitter:image" content="{{ '/assets/img/og-image.png' | absolute_url }}">{% endif %}
+{%- if page.collection == 'guides' %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+<meta property="article:modified_time" content="{{ page.updated | default: page.date | date_to_xmlschema }}">
+<meta property="article:section" content="{{ page.category }}">{% endif %}
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+{%- if fav_png.size > 0 %}
+<link rel="icon" href="{{ '/assets/img/favicon-32.png' | relative_url }}" sizes="32x32" type="image/png">{% endif %}
+{%- if touch_png.size > 0 %}
+<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">{% endif %}
+<link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }} guides" href="{{ '/feed.xml' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+<script>(function(){var d=document.documentElement;d.className+=' js';try{var t=localStorage.getItem('cf-theme');if(t){d.setAttribute('data-theme',t);}if(localStorage.getItem('cf-consent')==='essential'){(window.adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;}}catch(e){}})();</script>
+{%- if page.ads != false %}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense.client }}" crossorigin="anonymous"></script>{% endif %}
+{%- if site.analytics.ga4 != "" %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4 }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ site.analytics.ga4 }}');</script>{% endif %}
+<script>window.CF={base:"{{ site.baseurl }}",adClient:"{{ site.adsense.client }}",slots:{{ site.adsense.slots | jsonify }},forms:{{ site.forms | jsonify }},k:["bW9jLmxpY","W1nQDFhc2","tyb3diZXc="]};</script>
+{%- include schema.html %}
