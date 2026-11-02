@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CheapFly.ca">
+  <defs>
+    <linearGradient id="cfg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d5bff"/>
+      <stop offset=".62" stop-color="#5a4dff"/>
+      <stop offset="1" stop-color="#ff6a2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#cfg)"/>
+  <path d="M9 47c6 3 12 2.5 17-1.5" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.5 6"/>
+  <path d="M53 11 12 29.5l15 5.5z" fill="#fff"/>
+  <path d="M53 11 27 35l5 17z" fill="#e3ebff"/>
+  <path d="M27 35l5 17 4.5-10.5z" fill="#b9cbff"/>
+</svg>
