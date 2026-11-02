@@ -1,0 +1,45 @@
+---
+layout: page
+title: "Site Map"
+description: "Every page on CheapFly.ca: deal alerts, price watch, guides, airports, destinations, free tools, community pages and legal information."
+permalink: /site-map/
+eyebrow: "Navigate"
+wide: true
+---
+<div class="container section-sm">
+  <div class="sitemap-cols prose">
+    <h2>Start here</h2>
+    <ul>
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/deal-alerts/' | relative_url }}">Free deal alerts</a></li>
+      <li><a href="{{ '/deals/' | relative_url }}">Price watch</a></li>
+      <li><a href="{{ '/videos/' | relative_url }}">Video hub</a></li>
+      <li><a href="{{ '/faq/' | relative_url }}">FAQ</a></li>
+    </ul>
+    <h2>Guides</h2>
+    <ul>{% assign gs = site.guides | sort: "title" %}{% for g in gs %}<li><a href="{{ g.url | relative_url }}">{{ g.title }}</a></li>{% endfor %}</ul>
+    <h2>Airports</h2>
+    <ul>{% assign as = site.airports | sort: "code" %}{% for a in as %}<li><a href="{{ a.url | relative_url }}">{{ a.title }}</a></li>{% endfor %}</ul>
+    <h2>Destinations</h2>
+    <ul>{% assign ds = site.destinations | sort: "title" %}{% for d in ds %}<li><a href="{{ d.url | relative_url }}">{{ d.title }}</a></li>{% endfor %}</ul>
+    <h2>Free tools</h2>
+    <ul>{% for t in site.data.tools %}<li><a href="{{ '/tools/' | append: t.slug | append: '/' | relative_url }}">{{ t.name }}</a></li>{% endfor %}</ul>
+    <h2>Community</h2>
+    <ul>
+      <li><a href="{{ '/contests/' | relative_url }}">Contests &amp; prizes</a></li>
+      <li><a href="{{ '/support/' | relative_url }}">Support CheapFly</a></li>
+      <li><a href="{{ '/careers/' | relative_url }}">Careers</a></li>
+      <li><a href="{{ '/advertise/' | relative_url }}">Advertise &amp; partner</a></li>
+    </ul>
+    <h2>About &amp; legal</h2>
+    <ul>
+      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+      <li><a href="{{ '/editorial-policy/' | relative_url }}">Editorial policy</a></li>
+      <li><a href="{{ '/privacy/' | relative_url }}">Privacy policy</a></li>
+      <li><a href="{{ '/terms/' | relative_url }}">Terms of use</a></li>
+      <li><a href="{{ '/cookies/' | relative_url }}">Cookie policy</a></li>
+      <li><a href="{{ '/disclaimer/' | relative_url }}">Disclaimer &amp; trademarks</a></li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,183 @@
+---
+layout: default
+title: "Cheap Flights & Free Deal Alerts for Canadians"
+description: "Free cheap-flight deal alerts from 16 Canadian airports, price-watch targets, one-click search on Google Flights, Skyscanner and KAYAK, plus guides and free tools."
+body_class: home
+faq:
+  - q: "Is CheapFly.ca free?"
+    a: "Yes. Deal alerts, guides, the price watch and every tool are free. CheapFly is supported by advertising, sponsors and voluntary reader support, and never charges booking fees."
+  - q: "Does CheapFly sell flights?"
+    a: "No. CheapFly is an independent publisher, not a travel agency. Our search tool opens your trip on the booking or search site you choose, and you book directly with the airline or that site."
+  - q: "Which airports do you cover?"
+    a: "We track fares from 16 Canadian airports — including Toronto, Vancouver, Montréal, Calgary, Edmonton, Ottawa, Halifax and Winnipeg — plus nearby US border airports that often save Canadians money."
+  - q: "What is a deal threshold in the price watch?"
+    a: "It is our guidance for a great return economy fare on that route in Canadian dollars, including taxes, based on typical fare patterns. It is not a live price, but when you see a fare under it, it is usually worth booking quickly."
+  - q: "How often will I get deal alerts?"
+    a: "You choose. Pick instant alerts for big drops and mistake fares, or a weekly digest. Every email has a one-click unsubscribe link."
+  - q: "Can I trust mistake fares?"
+    a: "Most are honoured, but not all. Book refundable hotels and avoid non-refundable plans until your ticket is ticketed and confirmed for a few days. Our error-fare guide explains the risks."
+---
+{%- assign sun = site.data.routes | where: "region", "sun" | where_exp: "r", "r.alert == nil" | sort: "deal" -%}
+{%- assign eu = site.data.routes | where: "region", "europe" | sort: "deal" -%}
+{%- assign asia = site.data.routes | where: "region", "asia" | sort: "deal" -%}
+<section class="hero">
+  <div class="container">
+    <div class="hero__grid">
+      <div>
+        <p class="eyebrow eyebrow--light"><svg class="i" aria-hidden="true"><use href="#i-sparkle"/></svg>Canada's cheap-flight playbook</p>
+        <h1>Fly more.<br>Pay <span class="hl">way less.</span></h1>
+        <p class="lead">Free deal alerts from your home airport, honest price-watch targets for 80+ routes, and one-click search across every major fare engine. Built for Canadian travellers.</p>
+        <div data-form-holder>
+          <form class="quick-alert" data-form="Deal Alerts (homepage hero)" novalidate>
+            <label class="sr-only" for="hero-email">Email address</label>
+            <input id="hero-email" type="email" name="email" placeholder="Your email address" required autocomplete="email">
+            <label class="sr-only" for="hero-airport">Home airport</label>
+            <select id="hero-airport" name="home_airport" required>
+              <option value="">Home airport</option>
+              {%- for a in site.data.home_airports %}<option value="{{ a.code }}">{{ a.city }} ({{ a.code }})</option>{% endfor %}
+              <option value="Other">Other</option>
+            </select>
+            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn--accent" type="submit"><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg>Get free alerts</button>
+            <label class="consent" style="color:#b9c8f0"><input type="checkbox" name="consent" value="yes" required> Yes, email me flight deals from CheapFly.ca. I can unsubscribe anytime.</label>
+          </form>
+          <div class="form-success"><div class="ok"><svg class="i"><use href="#i-check"/></svg></div><h3 style="color:#fff">You're on the list!</h3><p style="color:#c8d6ff">Watch your inbox. Want sharper alerts? <a style="color:#fff" href="{{ '/deal-alerts/' | relative_url }}">Pick destinations and budgets</a>.</p></div>
+        </div>
+        <ul class="hero__badges">
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>100% free</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>16 Canadian airports</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>No booking fees, ever</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>CASL-compliant, 1-click unsubscribe</li>
+        </ul>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <svg class="hero__trail" viewBox="0 0 500 420" fill="none"><path d="M20 380 C 140 300, 160 120, 300 140 S 460 60, 490 20" stroke="rgba(255,255,255,.55)" stroke-width="2.5"/></svg>
+        {%- if sun.size > 0 %}<div class="hero-card hero-card--a"><small>Sun deal threshold</small><div class="row"><strong>{{ sun[0].from }} → {{ sun[0].to }}</strong><span class="tag">under ${{ sun[0].deal }}</span></div><small style="text-transform:none;letter-spacing:0">{{ sun[0].from_city }} to {{ sun[0].to_city }} · return</small></div>{% endif %}
+        {%- if eu.size > 0 %}<div class="hero-card hero-card--b"><small>Europe deal threshold</small><div class="row"><strong>{{ eu[0].from }} → {{ eu[0].to }}</strong><span class="tag">under ${{ eu[0].deal }}</span></div><small style="text-transform:none;letter-spacing:0">{{ eu[0].from_city }} to {{ eu[0].to_city }} · return</small></div>{% endif %}
+        {%- if asia.size > 0 %}<div class="hero-card hero-card--c"><small>Asia deal threshold</small><div class="row"><strong>{{ asia[0].from }} → {{ asia[0].to }}</strong><span class="tag">under ${{ asia[0].deal }}</span></div><small style="text-transform:none;letter-spacing:0">{{ asia[0].from_city }} to {{ asia[0].to_city }} · return</small></div>{% endif %}
+      </div>
+    </div>
+    <div class="hero-search" id="search">
+      {% include search-widget.html id="-home" %}
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container" data-filter-root=".pass">
+    <div class="section-head">
+      <div><p class="eyebrow">Price watch</p><h2>What a great fare looks like from your airport</h2><p>Our deal thresholds show the price to pounce on. When fares dip below them, we email subscribers.</p></div>
+      <a class="link-arrow" href="{{ '/deals/' | relative_url }}">See all routes <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="filters" data-filter-group="from" role="group" aria-label="Filter by departure airport">
+      <span class="filters__label">From</span>
+      <button class="chip-toggle" type="button" data-val="all" aria-pressed="true">All</button>
+      {%- assign clist = "YYZ,YVR,YUL,YYC,YEG,YOW,YHZ,YWG" | split: "," -%}{%- for c in clist %}<button class="chip-toggle" type="button" data-val="{{ c }}" aria-pressed="false">{{ c }}</button>{% endfor %}
+    </div>
+    {% include route-cards.html limit=12 %}
+    <p class="empty" data-filter-empty hidden>No routes in this preview. <a href="{{ '/deals/' | relative_url }}">Open the full price watch</a>.</p>
+  </div>
+</section>
+
+<section class="section-sm section--alt">
+  <div class="container">
+    <div class="section-head section-head--center"><p class="eyebrow">How it works</p><h2>Three steps to cheaper flights</h2></div>
+    <div class="steps">
+      <div class="step" data-reveal><h3>Tell us your airport</h3><p>Pick up to three home airports, the regions you dream about and your budget. Takes 40 seconds.</p></div>
+      <div class="step" data-reveal><h3>We watch the fares</h3><p>We track sales, fare drops and mistake fares against our deal thresholds for routes Canadians actually fly.</p></div>
+      <div class="step" data-reveal><h3>You book direct</h3><p>Alerts link straight to the airline or search site. No markups, no booking fees, no middleman.</p></div>
+    </div>
+    <p class="ta-c" style="margin-top:28px"><a class="btn btn--accent btn--lg" href="{{ '/deal-alerts/' | relative_url }}"><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg>Personalise my free alerts</a></p>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="section-head"><div><p class="eyebrow">Departure airports</p><h2>Cheap flights from your city</h2></div><a class="link-arrow" href="{{ '/airports/' | relative_url }}">All airports <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    <div class="grid grid-4">
+      {%- for a in site.data.home_airports %}
+      <a class="card place-card" href="{{ '/airports/' | append: a.code | downcase | append: '/' | relative_url }}" data-reveal>
+        <div class="place-card__top"><span class="place-card__code">{{ a.code }}</span><div class="place-card__sub">{{ a.prov }}</div><svg class="i i-bg" aria-hidden="true"><use href="#i-plane"/></svg></div>
+        <div class="place-card__body"><h3>{{ a.city }}</h3><p class="muted">Deals, cheapest months &amp; local tips</p></div>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% include ad.html slot="incontent" %}
+
+<section class="section-sm section--alt">
+  <div class="container">
+    <div class="section-head"><div><p class="eyebrow">Destinations</p><h2>Where Canadians fly for less</h2></div><a class="link-arrow" href="{{ '/destinations/' | relative_url }}">All destinations <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    <div class="grid grid-4">
+      {%- for d in site.destinations limit: 8 %}
+      <a class="card place-card place-card--dest" href="{{ d.url | relative_url }}" data-reveal>
+        <div class="place-card__top"><span class="place-card__code">{{ d.code }}</span><div class="place-card__sub">{{ d.country }}</div><svg class="i i-bg" aria-hidden="true"><use href="#i-globe"/></svg></div>
+        <div class="place-card__body"><h3>{{ d.destination }}</h3><p class="muted">Best: {{ d.best_months | truncate: 48 }}</p></div>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="section-head"><div><p class="eyebrow">Guides</p><h2>The playbook: fly cheaper, smarter</h2></div><a class="link-arrow" href="{{ '/guides/' | relative_url }}">All {{ site.guides.size }} guides <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    {%- assign feat = site.guides | where: "featured", true -%}
+    {%- assign rest = site.guides | where_exp: "g", "g.featured != true" -%}
+    {%- assign homeg = feat | concat: rest -%}
+    <div class="grid grid-3">
+      {%- for g in homeg limit: 6 %}{% include guide-card.html g=g %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-sm section--dark">
+  <div class="container">
+    <div class="section-head"><div><p class="eyebrow eyebrow--light">Free tools</p><h2>Calculators Canadian travellers actually use</h2><p style="color:#b9c8f0">Compensation, booking windows, carry-on sizes, budgets, points and more. No sign-up.</p></div><a class="btn btn--outline-light" href="{{ '/tools/' | relative_url }}">Browse tools</a></div>
+    <div class="grid grid-3">
+      {%- for t in site.data.tools limit: 6 %}
+      <a class="card tool-card" href="{{ '/tools/' | append: t.slug | append: '/' | relative_url }}" data-reveal><span class="card__icon"><svg class="i" aria-hidden="true"><use href="#i-{{ t.icon }}"/></svg></span><h3>{{ t.name }}</h3><p>{{ t.short }}</p></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="big-cta" data-reveal>
+      <div>
+        <p class="eyebrow eyebrow--light">Personalised alerts</p>
+        <h2>Tell us where you dream of going. We'll tell you when it's cheap.</h2>
+        <p>Choose airports, regions, months and a budget. Get only the deals that fit — instantly or as a weekly digest.</p>
+      </div>
+      <div>
+        <ul class="benefits">
+          <li><span class="tick"><svg class="i"><use href="#i-check"/></svg></span><span><strong>Mistake fares</strong> before they vanish</span></li>
+          <li><span class="tick"><svg class="i"><use href="#i-check"/></svg></span><span><strong>Sun sales</strong> for winter escapes</span></li>
+          <li><span class="tick"><svg class="i"><use href="#i-check"/></svg></span><span><strong>Europe &amp; Asia drops</strong> worth planning around</span></li>
+        </ul>
+        <a class="btn btn--accent btn--lg btn--block" href="{{ '/deal-alerts/' | relative_url }}">Build my alerts in 40 seconds</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm section--alt">
+  <div class="container">
+    <div class="section-head section-head--center"><p class="eyebrow">Community</p><h2>Help build Canada's favourite flight-deal community</h2></div>
+    <div class="community">
+      <a class="card" href="{{ '/contests/' | relative_url }}" data-reveal><span class="card__icon card__icon--points-rewards"><svg class="i"><use href="#i-trophy"/></svg></span><h3>Contests &amp; prizes</h3><p>Deal-hunting challenges, photo contests and referral races with travel prizes.</p><span class="card__more">See contests <svg class="i"><use href="#i-arrow"/></svg></span></a>
+      <a class="card" href="{{ '/support/' | relative_url }}" data-reveal><span class="card__icon card__icon--budget-travel"><svg class="i"><use href="#i-heart"/></svg></span><h3>Support CheapFly</h3><p>Keep alerts free and fund tools, talent, promotions and prize pools.</p><span class="card__more">Become a supporter <svg class="i"><use href="#i-arrow"/></svg></span></a>
+      <a class="card" href="{{ '/careers/' | relative_url }}" data-reveal><span class="card__icon card__icon--planning"><svg class="i"><use href="#i-briefcase"/></svg></span><h3>Join the team</h3><p>Deal hunters, writers, video creators and ambassadors across Canada.</p><span class="card__more">Open roles <svg class="i"><use href="#i-arrow"/></svg></span></a>
+      <a class="card" href="{{ '/advertise/' | relative_url }}" data-reveal><span class="card__icon card__icon--airlines"><svg class="i"><use href="#i-megaphone"/></svg></span><h3>Advertise &amp; partner</h3><p>Reach Canadians at the exact moment they plan a trip.</p><span class="card__more">Partnership options <svg class="i"><use href="#i-arrow"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container narrow">
+    {% include faq.html items=page.faq open_first=true %}
+  </div>
+</section>

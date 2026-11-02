@@ -1,0 +1,105 @@
+---
+layout: page
+title: "Support CheapFly.ca"
+crumb: "Support us"
+description: "Keep CheapFly's deal alerts and tools free for every Canadian. Support operations, promotions, new talent, contests and prizes with a one-time or monthly contribution."
+permalink: /support/
+eyebrow: "Fuel the mission"
+lead: "CheapFly is free for everyone. Readers who can chip in keep it that way — and fund the tools, people and prizes that make it better."
+wide: true
+faq:
+  - q: "Is my contribution tax-deductible?"
+    a: "No. CheapFly.ca is an independent publication, not a registered charity, so contributions are not eligible for charitable tax receipts."
+  - q: "How do I pay?"
+    a: "Use any payment button shown on this page, or send a pledge and we will reply with a secure payment link or Interac e-Transfer instructions. We never ask for card numbers by email or form."
+  - q: "Can I choose where my money goes?"
+    a: "Yes. Pick operations, promotions and marketing, hiring talent, or contests and prizes. Unrestricted support goes where it is needed most."
+  - q: "Can a business sponsor a contest prize?"
+    a: "Absolutely. Choose Contests and prizes in the form or visit our advertise and partner page for sponsorship packages with recognition."
+  - q: "Can I cancel a monthly contribution?"
+    a: "Yes, anytime. Reply to any receipt or use the contact page and we will stop it right away."
+---
+<div class="container section-sm">
+  <div class="split" style="align-items:start">
+    <div>
+      <h2>Where your support goes</h2>
+      <p class="muted">Our planned allocation for reader contributions. We publish a short update on what support funded.</p>
+      <div class="alloc" data-reveal>
+        <div class="alloc__row"><span>Operations &amp; tools</span><div class="alloc__bar"><span data-width="30%"></span></div><strong>30%</strong></div>
+        <div class="alloc__row"><span>Hiring talent</span><div class="alloc__bar"><span data-width="25%"></span></div><strong>25%</strong></div>
+        <div class="alloc__row"><span>Promotions &amp; marketing</span><div class="alloc__bar"><span data-width="20%"></span></div><strong>20%</strong></div>
+        <div class="alloc__row"><span>Contests &amp; prizes</span><div class="alloc__bar"><span data-width="15%"></span></div><strong>15%</strong></div>
+        <div class="alloc__row"><span>New features &amp; data</span><div class="alloc__bar"><span data-width="10%"></span></div><strong>10%</strong></div>
+      </div>
+      <div class="grid grid-2" style="margin-top:28px">
+        <div class="feature"><span class="card__icon"><svg class="i"><use href="#i-rocket"/></svg></span><div><h3>Operations</h3><p>Hosting, email delivery for alerts, fare-data tools and security.</p></div></div>
+        <div class="feature"><span class="card__icon card__icon--planning"><svg class="i"><use href="#i-users"/></svg></span><div><h3>Talent</h3><p>Paying deal analysts, writers and video creators across Canada.</p></div></div>
+        <div class="feature"><span class="card__icon card__icon--budget-travel"><svg class="i"><use href="#i-megaphone"/></svg></span><div><h3>Promotion</h3><p>Reaching more Canadians who overpay for flights.</p></div></div>
+        <div class="feature"><span class="card__icon card__icon--points-rewards"><svg class="i"><use href="#i-trophy"/></svg></span><div><h3>Prizes</h3><p>Funding travel prizes for community contests.</p></div></div>
+      </div>
+    </div>
+
+    <div class="form-card" data-form-holder id="pledge">
+      <form data-form="Support Pledge" novalidate>
+        <h2 style="font-size:1.4rem">Choose your support</h2>
+        <div class="tiers" style="grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
+          <label class="tier"><input type="radio" name="tier" value="Coffee — $5" data-amount="5"><span class="tier__name">Coffee</span><span class="tier__amt">$5</span></label>
+          <label class="tier tier--pop"><input type="radio" name="tier" value="Boarding Pass — $15/month" data-amount="15" checked><span class="tier__name">Boarding Pass</span><span class="tier__amt">$15<small>/mo</small></span></label>
+          <label class="tier"><input type="radio" name="tier" value="Frequent Flyer — $50" data-amount="50"><span class="tier__name">Frequent Flyer</span><span class="tier__amt">$50</span></label>
+          <label class="tier"><input type="radio" name="tier" value="First Class — $250" data-amount="250"><span class="tier__name">First Class</span><span class="tier__amt">$250</span></label>
+        </div>
+        <div class="form-grid">
+          <div class="field"><label for="s-amt">Amount (CAD)</label><input id="s-amt" name="amount_cad" type="number" min="1" step="1" value="15" required></div>
+          <div class="field"><label for="s-freq">Frequency</label><select id="s-freq" name="frequency"><option>Monthly</option><option>One-time</option><option>Yearly</option></select></div>
+          <div class="field full"><label for="s-purpose">Put it towards</label><select id="s-purpose" name="purpose"><option>Wherever it's needed most</option><option>Operations &amp; tools</option><option>Promotions &amp; marketing</option><option>Hiring talent</option><option>Contests &amp; prizes</option></select></div>
+          <div class="field"><label for="s-name">Name</label><input id="s-name" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="s-email">Email</label><input id="s-email" type="email" name="email" required autocomplete="email"></div>
+          <div class="field"><label for="s-pay">Preferred payment</label><select id="s-pay" name="payment_method"><option>Interac e-Transfer</option><option>Credit / debit card (secure link)</option><option>PayPal</option><option>Business invoice</option></select></div>
+          <div class="field"><label for="s-credit">Public thanks</label><select id="s-credit" name="recognition"><option>Thank me publicly by first name</option><option>Thank me as my business</option><option>Keep me anonymous</option></select></div>
+          <div class="field full"><label for="s-msg">Message (optional)</label><textarea id="s-msg" name="message" style="min-height:80px"></textarea></div>
+          <label class="consent full"><input type="checkbox" name="consent" value="yes" required> I understand CheapFly.ca is not a registered charity and contributions are not tax-deductible.</label>
+        </div>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn--accent btn--lg btn--block" type="submit" style="margin-top:16px"><svg class="i" aria-hidden="true"><use href="#i-heart"/></svg>Send my pledge</button>
+        <p class="form-note"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>No card details are collected here. We reply with a secure payment link or e-Transfer instructions.</p>
+        {%- assign d = site.donate -%}
+        {%- if d.paypal != "" or d.stripe != "" or d.kofi != "" or d.buymeacoffee != "" %}
+        <p class="muted" style="margin:16px 0 8px;font-weight:700">Or pay instantly:</p>
+        <div class="pay-buttons">
+          {%- if d.stripe != "" %}<a class="btn btn--primary" href="{{ d.stripe }}" target="_blank" rel="noopener">Card (Stripe)</a>{% endif %}
+          {%- if d.paypal != "" %}<a class="btn btn--ghost" href="{{ d.paypal }}" target="_blank" rel="noopener">PayPal</a>{% endif %}
+          {%- if d.kofi != "" %}<a class="btn btn--ghost" href="{{ d.kofi }}" target="_blank" rel="noopener">Ko-fi</a>{% endif %}
+          {%- if d.buymeacoffee != "" %}<a class="btn btn--ghost" href="{{ d.buymeacoffee }}" target="_blank" rel="noopener">Buy Me a Coffee</a>{% endif %}
+        </div>
+        {%- endif %}
+      </form>
+      <div class="form-success"><div class="ok"><svg class="i"><use href="#i-heart"/></svg></div><h3>Thank you!</h3><p class="muted">Your pledge is in. Watch your inbox for a secure payment link within one business day.</p></div>
+    </div>
+  </div>
+</div>
+
+<section class="section-sm section--alt">
+  <div class="container">
+    <div class="section-head section-head--center"><p class="eyebrow">Supporter perks</p><h2>Every level makes a difference</h2></div>
+    <div class="tiers">
+      <div class="tier" style="cursor:default"><span class="tier__name">Coffee</span><span class="tier__amt">$5</span><ul><li>Our sincere thanks</li><li>Helps cover one week of alert emails</li></ul></div>
+      <div class="tier tier--pop" style="cursor:default"><span class="tier__name">Boarding Pass</span><span class="tier__amt">$15<small>/mo</small></span><ul><li>Supporter badge in newsletters</li><li>Early access to new tools</li><li>Vote on routes we watch next</li></ul></div>
+      <div class="tier" style="cursor:default"><span class="tier__name">Frequent Flyer</span><span class="tier__amt">$50</span><ul><li>Everything in Boarding Pass for a year</li><li>Name on the supporters wall (optional)</li></ul></div>
+      <div class="tier" style="cursor:default"><span class="tier__name">First Class</span><span class="tier__amt">$250+</span><ul><li>Founding supporter recognition</li><li>Sponsor-a-prize naming option</li><li>Annual impact report</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="section-head section-head--center"><p class="eyebrow">No money? No problem</p><h2>Other ways to help</h2></div>
+    <div class="grid grid-4">
+      <div class="card"><span class="card__icon"><svg class="i"><use href="#i-share"/></svg></span><h3>Share us</h3><p>Send CheapFly to one friend who always overpays for flights.</p><button class="btn btn--ghost btn--sm" type="button" data-copy-link>Copy link</button></div>
+      <a class="card" href="{{ '/contact/' | relative_url }}"><span class="card__icon card__icon--passenger-rights"><svg class="i"><use href="#i-tag"/></svg></span><h3>Send a deal tip</h3><p>Spotted a fare drop or mistake fare? Tell us and we'll verify it.</p></a>
+      <a class="card" href="{{ '/careers/' | relative_url }}"><span class="card__icon card__icon--planning"><svg class="i"><use href="#i-briefcase"/></svg></span><h3>Contribute</h3><p>Write, edit, film or hunt deals with the team.</p></a>
+      <a class="card" href="{{ '/advertise/' | relative_url }}"><span class="card__icon card__icon--airlines"><svg class="i"><use href="#i-megaphone"/></svg></span><h3>Sponsor</h3><p>Businesses can sponsor prizes, tools or newsletters.</p></a>
+    </div>
+    <div class="narrow" style="margin:0 auto">{% include faq.html items=page.faq %}</div>
+  </div>
+</section>
+<script>document.addEventListener('change',function(e){if(e.target.name==='tier'){var a=document.getElementById('s-amt'),f=document.getElementById('s-freq');if(a)a.value=e.target.getAttribute('data-amount');if(f)f.value=/month/.test(e.target.value)?'Monthly':'One-time';}});</script>
