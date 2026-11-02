@@ -1,0 +1,100 @@
+---
+layout: page
+title: "Careers: Join the CheapFly Team"
+crumb: "Careers"
+description: "Work remotely with CheapFly.ca: freelance deal analysts, travel writers, video creators, social media and partnerships roles for travel-obsessed Canadians."
+permalink: /careers/
+eyebrow: "We're hiring"
+lead: "Remote, flexible roles for people who get a thrill from a great fare. Help millions of Canadians stop overpaying for flights."
+wide: true
+roles:
+  - title: "Flight Deal Analyst"
+    icon: search
+    type: "Freelance · Remote · Part-time"
+    pitch: "Find, verify and write up the deals our subscribers book."
+    duties: ["Monitor fares from your region's airports daily", "Verify dates, taxes and bag rules before publishing", "Write clear, honest alerts in our house style"]
+  - title: "Travel Writer (SEO)"
+    icon: map
+    type: "Freelance · Remote · Per article"
+    pitch: "Write genuinely useful guides for Canadian travellers."
+    duties: ["Research airports, destinations and travel rules from official sources", "Write original 1,200–2,000-word guides", "Update existing guides when rules change"]
+  - title: "Video Creator & Editor"
+    icon: video
+    type: "Freelance · Remote · Per project"
+    pitch: "Turn our best tips into YouTube videos and Shorts."
+    duties: ["Script and edit 60-second and 8-minute videos", "Create thumbnails that are clear, not clickbait", "Repurpose for Shorts, Reels and TikTok"]
+  - title: "Social Media & Community Lead"
+    icon: users
+    type: "Part-time · Remote"
+    pitch: "Grow and look after our community of deal hunters."
+    duties: ["Post deals and tips across social channels", "Run contests and community challenges", "Answer reader questions kindly and fast"]
+  - title: "Partnerships & Ad Sales"
+    icon: handshake
+    type: "Commission-based · Remote"
+    pitch: "Bring travel brands, agencies and sponsors on board."
+    duties: ["Prospect travel advisors, tour operators and travel-gear brands", "Pitch sponsorships, lead partnerships and newsletter ads", "Manage relationships and renewals"]
+  - title: "City & Campus Ambassador"
+    icon: pin
+    type: "Volunteer + perks · Your city"
+    pitch: "Represent CheapFly in your city or school."
+    duties: ["Share deals with local communities", "Host meetups and info sessions", "Send local tips and alternative-airport intel"]
+faq:
+  - q: "Are these jobs paid?"
+    a: "Analyst, writer, video and part-time community roles are paid per project or per hour. Partnerships roles are commission-based, and ambassadors receive perks and recognition."
+  - q: "Do I need to live in a specific city?"
+    a: "No. All roles are remote. Knowledge of your local airport and region is a plus, especially outside Toronto, Montréal and Vancouver."
+  - q: "How does the hiring process work?"
+    a: "Apply with the form, complete a short paid or unpaid sample task depending on the role, then have a video call. We aim to reply to every applicant within two weeks."
+---
+<div class="container section-sm">
+  <div class="grid grid-3" style="margin-bottom:24px">
+    <div class="feature"><span class="card__icon"><svg class="i"><use href="#i-globe"/></svg></span><div><h3>100% remote</h3><p>Work from anywhere in Canada on your own schedule.</p></div></div>
+    <div class="feature"><span class="card__icon card__icon--passenger-rights"><svg class="i"><use href="#i-plane"/></svg></span><div><h3>Travel perks</h3><p>First look at every deal and conference opportunities.</p></div></div>
+    <div class="feature"><span class="card__icon card__icon--budget-travel"><svg class="i"><use href="#i-rocket"/></svg></span><div><h3>Grow with us</h3><p>Early contributors lead the teams we build next.</p></div></div>
+  </div>
+  <div style="display:grid;gap:16px">
+    {%- for r in page.roles %}
+    <article class="card job">
+      <span class="card__icon"><svg class="i" aria-hidden="true"><use href="#i-{{ r.icon }}"/></svg></span>
+      <div>
+        <h3 style="margin:0">{{ r.title }}</h3>
+        <div class="job__meta"><span class="chip">{{ r.type }}</span></div>
+        <p style="margin-bottom:8px">{{ r.pitch }}</p>
+        <ul>{% for d in r.duties %}<li>{{ d }}</li>{% endfor %}</ul>
+      </div>
+      <a class="btn btn--primary btn--sm" href="#apply" data-role="{{ r.title }}">Apply</a>
+    </article>
+    {%- endfor %}
+  </div>
+
+  <div class="split section-sm" id="apply" style="align-items:start">
+    <div class="prose">
+      <h2>Apply in 3 minutes</h2>
+      <p>Tell us about yourself and share links to your work. No cover letter needed — a few honest sentences beat a polished essay.</p>
+      <h3>How we hire</h3>
+      <ol><li>Application review</li><li>Short sample task</li><li>30-minute video chat</li><li>Paid trial project</li></ol>
+      <p>CheapFly.ca welcomes applicants of every background, identity and ability. Tell us if you need an accommodation at any stage.</p>
+    </div>
+    <div class="form-card" data-form-holder>
+      <form data-form="Job Application" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="j-name">Full name</label><input id="j-name" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="j-email">Email</label><input id="j-email" type="email" name="email" required autocomplete="email"></div>
+          <div class="field"><label for="j-role">Role</label><select id="j-role" name="role" required><option value="">Select…</option>{% for r in page.roles %}<option>{{ r.title }}</option>{% endfor %}<option>Other / open application</option></select></div>
+          <div class="field"><label for="j-loc">City &amp; province</label><input id="j-loc" name="location" required placeholder="e.g. Winnipeg, MB"></div>
+          <div class="field"><label for="j-port">Portfolio or work samples</label><input id="j-port" type="url" name="portfolio" placeholder="https://"></div>
+          <div class="field"><label for="j-li">LinkedIn (optional)</label><input id="j-li" type="url" name="linkedin" placeholder="https://"></div>
+          <div class="field"><label for="j-hours">Availability</label><select id="j-hours" name="availability"><option>A few hours a week</option><option>10–20 hours a week</option><option>20+ hours a week</option><option>Project-based</option></select></div>
+          <div class="field"><label for="j-rate">Rate expectation (optional)</label><input id="j-rate" name="rate" placeholder="e.g. $35/hour or $0.15/word"></div>
+          <div class="field full"><label for="j-why">Why you? Share a great deal you found or a project you're proud of</label><textarea id="j-why" name="why" required></textarea></div>
+          <label class="consent full"><input type="checkbox" name="consent" value="yes" required> I agree to CheapFly.ca storing my application to assess my candidacy.</label>
+        </div>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn--accent btn--block" type="submit" style="margin-top:16px">Send application</button>
+      </form>
+      <div class="form-success"><div class="ok"><svg class="i"><use href="#i-check"/></svg></div><h3>Application received</h3><p class="muted">Thanks! We reply to every applicant within about two weeks.</p></div>
+    </div>
+  </div>
+  <div class="narrow" style="margin:0 auto">{% include faq.html items=page.faq %}</div>
+</div>
+<script>document.addEventListener('click',function(e){var a=e.target.closest('[data-role]');if(!a)return;var s=document.getElementById('j-role');if(s)s.value=a.getAttribute('data-role');});</script>

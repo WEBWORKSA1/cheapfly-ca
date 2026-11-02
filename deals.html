@@ -1,0 +1,53 @@
+---
+layout: page
+title: "Price Watch: Cheap Flight Deal Thresholds from Canada"
+crumb: "Price watch"
+description: "See what a great return fare looks like on 80+ routes from 16 Canadian airports. Filter by airport and region, then check live fares in one click."
+permalink: /deals/
+eyebrow: "Price watch"
+lead: "Our deal threshold is the price to pounce on. Filter by your airport, compare with typical fares, then check live prices or set an alert."
+wide: true
+faq:
+  - q: "Are these live prices?"
+    a: "No. Deal thresholds are CheapFly guidance based on typical fare patterns for each route. Click Check fares to see live prices on Google Flights."
+  - q: "How should I use a deal threshold?"
+    a: "Set alerts or watch fares for your route. When you see a return economy fare at or below the threshold, including taxes, it is usually a strong price and worth booking quickly."
+  - q: "Why are some routes marked with a warning?"
+    a: "When an airline or a whole market suspends service, we keep the route visible with a warning so you know to check that flights are actually operating."
+  - q: "Can you add my route?"
+    a: "Yes. Tell us your airport and destination through the deal-alerts form or the contact page, and we prioritise routes that many readers ask for."
+---
+<div class="container section-sm" data-filter-root=".pass">
+  <div class="filters" data-filter-group="from" role="group" aria-label="Filter by departure airport">
+    <span class="filters__label">From</span>
+    <button class="chip-toggle" type="button" data-val="all" aria-pressed="true">All airports</button>
+    {%- for a in site.data.home_airports %}{% assign n = site.data.routes | where: "from", a.code %}{% if n.size > 0 %}<button class="chip-toggle" type="button" data-val="{{ a.code }}" aria-pressed="false">{{ a.code }}</button>{% endif %}{% endfor %}
+  </div>
+  <div class="filters" data-filter-group="region" role="group" aria-label="Filter by region">
+    <span class="filters__label">Region</span>
+    <button class="chip-toggle" type="button" data-val="all" aria-pressed="true">Everywhere</button>
+    <button class="chip-toggle" type="button" data-val="sun" aria-pressed="false">Sun</button>
+    <button class="chip-toggle" type="button" data-val="usa" aria-pressed="false">USA</button>
+    <button class="chip-toggle" type="button" data-val="europe" aria-pressed="false">Europe</button>
+    <button class="chip-toggle" type="button" data-val="asia" aria-pressed="false">Asia &amp; Pacific</button>
+    <button class="chip-toggle" type="button" data-val="latam" aria-pressed="false">Latin America</button>
+    <button class="chip-toggle" type="button" data-val="canada" aria-pressed="false">Canada</button>
+  </div>
+  <div class="filters">
+    <label class="filter-search"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg><span class="sr-only">Search routes</span><input type="search" data-filter-search placeholder="Search a city, code or country"></label>
+    <label><span class="sr-only">Sort</span>
+      <select data-filter-sort class="chip-toggle" style="padding-right:30px">
+        <option value="deal-asc">Lowest threshold first</option>
+        <option value="deal-desc">Highest threshold first</option>
+        <option value="az">A–Z</option>
+      </select></label>
+  </div>
+  <p class="count" data-filter-count aria-live="polite"></p>
+  {% include route-cards.html limit=200 %}
+  <p class="empty" data-filter-empty hidden>No routes match. Try another airport or region — or <a href="{{ '/deal-alerts/' | relative_url }}">ask us to watch your route</a>.</p>
+  {% include ad.html slot="incontent" %}
+  {% include alert-cta.html source="price-watch" title="Don't want to check every day? We'll watch these for you." %}
+  <div class="narrow" style="margin:0 auto">
+    {% include faq.html items=page.faq %}
+  </div>
+</div>

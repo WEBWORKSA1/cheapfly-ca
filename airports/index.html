@@ -1,0 +1,26 @@
+---
+layout: page
+title: "Cheap Flights from Canadian Airports"
+crumb: "Airports"
+description: "Cheap-flight guides for 16 Canadian airports: airlines, cheapest months, best-value routes, nearby alternatives and money-saving tips for each city."
+permalink: /airports/
+eyebrow: "Departure airports"
+lead: "Pick your airport for its best-value routes, cheapest months, airlines, nearby alternatives and local tips."
+wide: true
+---
+<div class="container section-sm">
+  <div class="grid grid-4">
+    {%- assign aps = site.airports | sort: "code" -%}
+    {%- for a in aps %}
+    {%- assign n = site.data.routes | where: "from", a.code -%}
+    <a class="card place-card" href="{{ a.url | relative_url }}">
+      <div class="place-card__top"><span class="place-card__code">{{ a.code }}</span><div class="place-card__sub">{{ a.province }}</div><svg class="i i-bg" aria-hidden="true"><use href="#i-plane"/></svg></div>
+      <div class="place-card__body"><h3>{{ a.city }}</h3><p class="muted">{{ a.airport_name }}{% if n.size > 0 %} · {{ n.size }} routes watched{% endif %}</p></div>
+    </a>
+    {%- endfor %}
+  </div>
+  <div class="callout" style="margin-top:32px"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg>
+    <p><strong>Live near the border?</strong> Buffalo, Bellingham, Plattsburgh, Burlington and Detroit can be dramatically cheaper for US and sun trips. Read our <a href="{{ '/guides/fly-from-us-border-airports/' | relative_url }}">US border airports guide</a> before you book.</p></div>
+  {% include ad.html slot="incontent" %}
+  {% include alert-cta.html source="airports-index" %}
+</div>

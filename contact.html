@@ -1,0 +1,36 @@
+---
+layout: page
+title: "Contact CheapFly.ca"
+crumb: "Contact"
+description: "Contact the CheapFly.ca team with questions, deal tips, corrections, media requests or partnership ideas. We reply within one to two business days."
+permalink: /contact/
+eyebrow: "Contact"
+lead: "Questions, deal tips, corrections or ideas — we read every message and reply within one to two business days."
+wide: true
+---
+<div class="container section-sm">
+  <div class="split" style="align-items:start">
+    <div class="form-card" data-form-holder>
+      <form data-form="Contact Form" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="ct-name">Name</label><input id="ct-name" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="ct-email">Email</label><input id="ct-email" type="email" name="email" required autocomplete="email"></div>
+          <div class="field full"><label for="ct-topic">Topic</label>
+            <select id="ct-topic" name="topic" required><option value="">Select…</option><option>General question</option><option>Deal tip</option><option>Correction / factual error</option><option>Advertising &amp; sponsorship</option><option>Partnership</option><option>Media / press</option><option>Website or domain acquisition</option><option>Privacy request</option><option>Unsubscribe help</option></select></div>
+          <div class="field full"><label for="ct-msg">Message</label><textarea id="ct-msg" name="message" required></textarea></div>
+          <label class="consent full"><input type="checkbox" name="consent" value="yes" required> I agree that CheapFly.ca may use my details to reply to this message.</label>
+        </div>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn--primary btn--lg btn--block" type="submit" style="margin-top:16px"><svg class="i" aria-hidden="true"><use href="#i-send"/></svg>Send message</button>
+        <p class="form-note"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>We use your details only to reply. See our <a href="{{ '/privacy/' | relative_url }}">privacy policy</a>.</p>
+      </form>
+      <div class="form-success"><div class="ok"><svg class="i"><use href="#i-check"/></svg></div><h3>Message sent</h3><p class="muted">Thanks for reaching out. We'll reply within one to two business days.</p></div>
+    </div>
+    <div style="display:grid;gap:18px">
+      <div class="card"><span class="card__icon"><svg class="i"><use href="#i-mail"/></svg></span><h3>Prefer email?</h3><p>Open a message in your own email app.</p><a class="btn btn--ghost btn--sm" href="{{ '/contact/' | relative_url }}" data-mail data-subject="CheapFly.ca enquiry">Email the team</a></div>
+      <div class="card"><span class="card__icon card__icon--budget-travel"><svg class="i"><use href="#i-handshake"/></svg></span><h3>Business, domain &amp; partnerships</h3><p>Interested in this website, the domain name, sponsorship, advertising or a partnership?</p><a class="btn btn--accent btn--sm" href="{{ site.contact_cta_url }}" target="_blank" rel="noopener">Business contact</a></div>
+      <div class="card"><span class="card__icon card__icon--passenger-rights"><svg class="i"><use href="#i-tag"/></svg></span><h3>Sending a deal tip?</h3><p>Include the route, dates, price in CAD, where you saw it and a screenshot link. We verify every tip before publishing.</p></div>
+      <div class="card"><span class="card__icon card__icon--planning"><svg class="i"><use href="#i-info"/></svg></span><h3>Before you write</h3><p>We can't change or cancel bookings — contact your airline or booking site for that. For compensation claims, try our <a href="{{ '/tools/flight-delay-compensation/' | relative_url }}">compensation calculator</a>.</p></div>
+    </div>
+  </div>
+</div>
