@@ -1,0 +1,182 @@
+# Carry-on and personal-item limits, checked 2026-11-01.
+# Dimensions are [length, width, height] in cm, largest first, wheels and handles included.
+# "Verified" in a note means the figure matched the airline's own site in search results on 2026-11-01.
+# Notes marked "not re-verified" are the airline's published policy as last known (mid-2026); the
+# session's web-search budget ran out before they could be re-checked. Check them before publishing.
+# Airlines change these often, so the tool should always say "verify with your airline before you fly".
+
+- airline: "Air Canada"
+  carry_on: [55, 40, 23]
+  carry_on_kg: null
+  personal_item: [43, 33, 16]
+  basic_fare_includes_carry_on: false
+  note: "Verified. Economy Basic tickets bought on or after Jan 3, 2025 include a personal item only within North America and to Mexico, the Caribbean and Central America. A standard carry-on is still included on international (e.g. transatlantic) itineraries. Bags must fit the sizer."
+  source: "https://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html"
+
+- airline: "WestJet"
+  carry_on: [56, 36, 23]
+  carry_on_kg: null
+  personal_item: [41, 33, 15]
+  basic_fare_includes_carry_on: false
+  note: "Carry-on size changed to 56 x 36 x 23 cm (22 x 14 x 9 in) on May 6, 2025; some pages still show the old 53 x 38 x 23 cm. UltraBasic includes a personal item only, except on flights to/from Europe and Asia or when Extended Comfort is bought for every flight in one direction."
+  source: "https://www.westjet.com/en-ca/baggage/carry-on"
+
+- airline: "Porter Airlines"
+  carry_on: [55, 40, 23]
+  carry_on_kg: 9
+  personal_item: [43, 33, 16]
+  basic_fare_includes_carry_on: false
+  note: "Verified. PorterClassic Basic includes a personal item only. The Basic Express add-on (from about $50) adds a standard carry-on. Standard, Flexible and Freedom fares include one carry-on and one personal item."
+  source: "https://www.flyporter.com/en-ca/travel-information/baggage/carry-on-allowance"
+
+- airline: "Flair Airlines"
+  carry_on: [55, 40, 23]
+  carry_on_kg: 10
+  personal_item: [43, 33, 15]
+  basic_fare_includes_carry_on: false
+  note: "Verified. Personal item up to 7 kg is included. The carry-on is a paid add-on on the lowest fare and is cheaper when added at booking than at the airport. Bundles include it. Airport bag sizers are strictly enforced."
+  source: "https://www.flyflair.com/travel-info/baggage"
+
+- airline: "Air Transat"
+  carry_on: [55, 40, 23]
+  carry_on_kg: null
+  personal_item: [43, 31, 13]
+  basic_fare_includes_carry_on: false
+  note: "Verified sizes. Eco Budget and Promo fares booked on or after Feb 11, 2025 include a personal item only, except on flights to Europe, Africa, Peru and Brazil where a carry-on is included. Vacation packages are not affected. No carry-on weight limit was found on the official pages (older guides say 10 kg)."
+  source: "https://www.airtransat.com/en-CA/travel-information/baggage/weight-dimensions"
+
+- airline: "PAL Airlines"
+  carry_on: [53, 38, 23]
+  carry_on_kg: null
+  personal_item: [41, 33, 15]
+  basic_fare_includes_carry_on: true
+  note: "Website lists 21 x 15 x 9 in for one carry-on and 16 x 13 x 6 in for a personal item (converted to cm). An older tariff lists a smaller 13 lb bag, so confirm when booking. No carry-on is allowed when connecting to an Air Borealis flight."
+  source: "https://palairlines.ca/travel-hub/baggage/"
+
+- airline: "Air North"
+  carry_on: [54, 38, 22]
+  carry_on_kg: null
+  personal_item: [41, 33, 15]
+  basic_fare_includes_carry_on: true
+  note: "Verified. The size shown is for Boeing jet flights. On ATR turboprop flights the carry-on limit is 38 x 28 x 22 cm. The airline's FAQ says all fares include two checked bags, one carry-on and one personal item."
+  source: "https://www.flyairnorth.com/flights/baggage-carry"
+
+- airline: "United Airlines"
+  carry_on: [56, 35, 23]
+  carry_on_kg: null
+  personal_item: [43, 25, 22]
+  basic_fare_includes_carry_on: false
+  note: "22 x 14 x 9 in carry-on and 17 x 10 x 9 in personal item. Basic Economy includes a personal item only on most North American routes. A full carry-on is allowed on transatlantic, transpacific and South America routes. Sizes match several 2026 sources but were not confirmed on united.com in this check."
+  source: "https://www.united.com/en/us/fly/baggage/carry-on-bags.html"
+
+- airline: "Delta Air Lines"
+  carry_on: [56, 35, 23]
+  carry_on_kg: null
+  personal_item: null
+  basic_fare_includes_carry_on: true
+  note: "Verified. 22 x 14 x 9 in, 45 linear inches. There is no published size for the personal item (purse, laptop bag or similar that fits under the seat). Basic Economy includes a carry-on, but Basic Economy passengers board late, so the bag may be gate-checked for free."
+  source: "https://www.delta.com/us/en/baggage/carry-on-baggage"
+
+- airline: "American Airlines"
+  carry_on: [56, 36, 23]
+  carry_on_kg: null
+  personal_item: [45, 35, 20]
+  basic_fare_includes_carry_on: true
+  note: "Verified. Basic Economy includes one personal item and one carry-on on domestic and most international routes. Basic Economy boards last, so bin space can run out. Some regional (American Eagle) aircraft have smaller bins."
+  source: "https://www.aa.com/i18n/travel-info/baggage/carry-on-baggage.html"
+
+- airline: "Alaska Airlines"
+  carry_on: [56, 36, 23]
+  carry_on_kg: null
+  personal_item: null
+  basic_fare_includes_carry_on: true
+  note: "Verified. 22 x 14 x 9 in, including wheels, handles and pockets. There is no published size for the personal item. Saver fares get the same carry-on allowance as Main but board last."
+  source: "https://www.alaskaair.com/content/travel-info/baggage/carry-on-luggage"
+
+- airline: "British Airways"
+  carry_on: [56, 45, 25]
+  carry_on_kg: 23
+  personal_item: [40, 30, 15]
+  basic_fare_includes_carry_on: true
+  note: "Sizes verified. Cabin bag plus a handbag or backpack, including on hand-baggage-only (Basic) fares. The 23 kg per-bag weight is BA's long-standing policy but was not re-confirmed in this check. One BA page also shows a 45 x 36 x 20 cm handbag, so the smaller size is used here."
+  source: "https://www.britishairways.com/content/information/baggage-essentials"
+
+- airline: "Air France"
+  carry_on: [55, 35, 25]
+  carry_on_kg: 12
+  personal_item: [40, 30, 15]
+  basic_fare_includes_carry_on: false
+  note: "Cabin bag size and 12 kg combined Economy limit (cabin bag plus small bag) verified. The rule is '0 to 1 cabin bag depending on fare', so the cheapest fares within Europe can exclude the cabin bag. Transatlantic Economy includes one. The 40 x 30 x 15 cm small bag size was not re-confirmed."
+  source: "https://wwws.airfrance.us/information/bagages/bagage-cabine-soute"
+
+- airline: "KLM"
+  carry_on: [55, 35, 25]
+  carry_on_kg: 12
+  personal_item: [40, 30, 15]
+  basic_fare_includes_carry_on: false
+  note: "Verified. 12 kg is the combined limit for the cabin bag and small bag. Economy Basic tickets (within Europe) include the small bag only, and a cabin bag can be bought in My Trip. Light, Standard and Flex fares, and intercontinental Economy, include both."
+  source: "https://www.klm.com/information/baggage/hand-baggage-allowance"
+
+- airline: "Lufthansa"
+  carry_on: [55, 40, 23]
+  carry_on_kg: 8
+  personal_item: [40, 30, 10]
+  basic_fare_includes_carry_on: false
+  note: "A new Economy Basic fare (on sale Apr 28, 2026, for travel from May 19, 2026) on selected European routes includes a personal item only and is expected on all European routes by the end of 2026. Economy Light and long-haul (e.g. Canada) Economy include one carry-on. The 8 kg limit was confirmed. The cm sizes are the published policy as last known and were not re-verified."
+  source: "https://www.lufthansa.com/ca/en/carry-on-baggage"
+
+- airline: "Icelandair"
+  carry_on: [55, 40, 20]
+  carry_on_kg: 10
+  personal_item: [40, 30, 15]
+  basic_fare_includes_carry_on: true
+  note: "Verified. Economy Light includes one carry-on (10 kg) and one personal item that fits under the seat. It does not include a checked bag or seat selection."
+  source: "https://www.icelandair.com/support/baggage/allowance/"
+
+- airline: "TAP Air Portugal"
+  carry_on: [55, 40, 25]
+  carry_on_kg: 10
+  personal_item: [40, 30, 15]
+  basic_fare_includes_carry_on: true
+  note: "Verified. The current limit is 55 x 40 x 25 cm and 10 kg. Older guides cite 55 x 40 x 20 cm and 8 kg, which is out of date. The personal item is limited to 2 kg. The Discount fare is sold as a hand-baggage-only fare."
+  source: "https://www.flytap.com/en-us/information/baggage/hand-baggage"
+
+- airline: "Aer Lingus"
+  carry_on: [55, 40, 24]
+  carry_on_kg: 10
+  personal_item: [40, 30, 20]
+  basic_fare_includes_carry_on: true
+  note: "Verified. Transatlantic Saver includes a 10 kg carry-on and a small personal item. Within Europe every fare includes a 10 kg bag that can be checked for free, but carrying it on board can cost extra (Feb 2026 policy update). Confirm the rules for your route."
+  source: "https://www.aerlingus.com/book/plan/our-fares/"
+
+- airline: "Ryanair"
+  carry_on: [55, 40, 20]
+  carry_on_kg: 10
+  personal_item: [40, 30, 20]
+  basic_fare_includes_carry_on: false
+  note: "Not re-verified. The basic fare includes one under-seat personal bag only (enlarged to 40 x 30 x 20 cm in 2025). The 10 kg cabin bag requires Priority & 2 Cabin Bags or a higher fare bundle. Gate fees for oversize bags are steep."
+  source: "https://www.ryanair.com/"
+
+- airline: "easyJet"
+  carry_on: [56, 45, 25]
+  carry_on_kg: 15
+  personal_item: [45, 36, 20]
+  basic_fare_includes_carry_on: false
+  note: "Not re-verified. Every fare includes one under-seat bag (15 kg). A large cabin bag for the overhead locker needs an Up Front or Extra Legroom seat, a bundle, or easyJet Plus."
+  source: "https://www.easyjet.com/"
+
+- airline: "Spirit Airlines"
+  carry_on: [56, 46, 25]
+  carry_on_kg: null
+  personal_item: [45, 35, 20]
+  basic_fare_includes_carry_on: false
+  note: "CEASED OPERATIONS on May 2, 2026 (wound down in its second Chapter 11 case). The sizes shown are its last published limits (22 x 18 x 10 in carry-on, 18 x 14 x 8 in personal item), kept for reference only. Hide or label this entry in the tool."
+  source: "https://www.npr.org/2026/05/02/nx-s1-5807933/spirit-airlines-ceases-operations-folds"
+
+- airline: "Frontier Airlines"
+  carry_on: [61, 41, 25]
+  carry_on_kg: 16
+  personal_item: [46, 36, 20]
+  basic_fare_includes_carry_on: false
+  note: "Not re-verified. 24 x 16 x 10 in carry-on, 35 lb maximum, paid add-on unless included in a bundle. The 18 x 14 x 8 in personal item is included. Fees are lowest when added at booking."
+  source: "https://www.flyfrontier.com/"

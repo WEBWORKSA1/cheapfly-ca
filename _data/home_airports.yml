@@ -1,0 +1,16 @@
+- { code: "YYZ", city: "Toronto Pearson", prov: "ON" }
+- { code: "YTZ", city: "Toronto Billy Bishop", prov: "ON" }
+- { code: "YHM", city: "Hamilton", prov: "ON" }
+- { code: "YOW", city: "Ottawa", prov: "ON" }
+- { code: "YUL", city: "Montréal", prov: "QC" }
+- { code: "YQB", city: "Québec City", prov: "QC" }
+- { code: "YVR", city: "Vancouver", prov: "BC" }
+- { code: "YYJ", city: "Victoria", prov: "BC" }
+- { code: "YLW", city: "Kelowna", prov: "BC" }
+- { code: "YYC", city: "Calgary", prov: "AB" }
+- { code: "YEG", city: "Edmonton", prov: "AB" }
+- { code: "YXE", city: "Saskatoon", prov: "SK" }
+- { code: "YQR", city: "Regina", prov: "SK" }
+- { code: "YWG", city: "Winnipeg", prov: "MB" }
+- { code: "YHZ", city: "Halifax", prov: "NS" }
+- { code: "YYT", city: "St. John's", prov: "NL" }

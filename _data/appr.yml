@@ -1,0 +1,40 @@
+# Canada's Air Passenger Protection Regulations (APPR), SOR/2019-150, as in force on 2026-11-01.
+# Status check (2026-11-01): the Justice Laws consolidation (current to 2026-09-30) is still the 2019
+# regulations as last amended on 2022-09-08. The CTA's proposed overhaul (Canada Gazette Part I,
+# 2024-12-21; comments closed 2025-03-06) has NOT been finalized or brought into force, so the
+# compensation amounts below are unchanged. Bill C-31 (Budget 2025 Implementation Act, No. 2,
+# Division 17) would move APPR regulation-making and complaint handling from the CTA to the
+# Minister of Transport and third-party resolvers; it was still before Parliament in late October 2026.
+# Re-check before publishing anything that relies on these numbers.
+verified: "2026-11-01"
+source: "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2019-150/"
+source_plain_language: "https://rppa-appr.ca/eng/compensation-flight-delays-and-cancellations"
+source_proposed_changes: "https://gazette.gc.ca/rp-pr/p1/2024/2024-12-21/html/reg1-eng.html"
+# Minimum compensation (CAD) for a delay or cancellation WITHIN the airline's control and NOT
+# required for safety, based on how late the passenger ARRIVES at the final destination.
+delay_large: {h3_6: 400, h6_9: 700, h9: 1000}     # 3 to <6 h, 6 to <9 h, 9 h or more
+delay_small: {h3_6: 125, h6_9: 250, h9: 500}
+# If the passenger takes a refund instead of rebooking (the trip no longer serves its purpose),
+# the minimum compensation is the lowest band.
+refund_instead_large: 400
+refund_instead_small: 125
+# Denied boarding within the airline's control (same amounts for large and small carriers),
+# based on arrival delay at the final destination. Payable on the spot or within 48 hours.
+denied_boarding: {h0_6: 900, h6_9: 1800, h9: 2400}
+claim_window_days: 365        # written claim to the airline within 1 year of the delay or cancellation
+airline_response_days: 30     # airline must pay or explain why it owes nothing within 30 days
+refund_deadline_days: 30      # refunds owed under the APPR must be paid within 30 days
+large_carrier_definition: "A carrier that transported a worldwide total of 2 million or more passengers in each of the two preceding calendar years. Every other carrier is a small carrier. The airline's size is stated in its tariff (terms and conditions)."
+notes:
+  - "Applies to flights to, from and within Canada, including connecting flights, on any airline."
+  - "Three categories decide what is owed. Within the airline's control: compensation, standards of treatment and rebooking or refund. Within control but required for safety (e.g. an unscheduled repair found in a check): no compensation, but standards of treatment and rebooking or refund. Outside the airline's control (weather, natural disasters, air traffic control, security threats, medical emergencies, wildlife strikes, labour disruptions within the carrier or an essential service provider, and similar): no compensation and no meals or hotels, but the airline must rebook you, or refund you if it cannot rebook you within 48 hours of the original departure."
+  - "No compensation is owed if the airline told you about the delay or cancellation at least 14 days before departure."
+  - "Compensation must be offered in money. The airline can offer vouchers or other forms only if they are worth more, the passenger agrees in writing, and they do not expire."
+  - "Standards of treatment (within control, including safety-related): after a 2-hour wait from the original departure time the airline must give food and drink in reasonable quantities and access to communication, plus a hotel or similar and transportation if you are stuck overnight, at no cost."
+  - "Rebooking (within control): next available flight on the same airline or a partner. Large carriers that cannot rebook you within 9 hours of the original departure must use another airline, including a competitor. If the new itinerary does not meet your needs, you can take a refund of the unused portion instead."
+  - "Tarmac delays: the airline must provide working toilets, ventilation, food, drink and communication, and must let passengers off after 3 hours unless take-off is imminent (the airline can stay up to 45 more minutes in that case)."
+  - "Children under 14 must be seated near a parent or guardian at no extra charge: next to them if under 5, in the same row and no more than one seat apart if 5 to 11, and no more than one row apart if 12 or 13."
+  - "Lost, damaged or delayed bags: liability follows the Montreal Convention (limits in Special Drawing Rights, revised by ICAO at the end of 2024; check the current figure). The airline must also refund any baggage fees paid for a lost or damaged bag."
+  - "How to claim: send the airline a written claim first. If it refuses or does not answer within 30 days, file a complaint with the Canadian Transportation Agency. The CTA's complaint backlog was reported at roughly 97,000 to 98,000 cases in 2026, so expect long waits."
+  - "Pending changes (NOT in force on 2026-11-01): the 2024 draft would remove the three categories and require compensation unless exceptional circumstances apply, and would raise maximum penalties for corporations from $25,000 to $250,000. Bill C-31 would shift rule-making to the Minister of Transport and allow outside third parties to resolve complaints. Do not present any of these as current law."
+  - "General information only, not legal advice. Always check rppa-appr.ca and the airline's tariff for your flight."

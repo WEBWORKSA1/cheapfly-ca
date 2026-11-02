@@ -1,0 +1,104 @@
+# ---------------------------------------------------------------
+#  CheapFly.ca — site configuration (Jekyll / GitHub Pages)
+#  Everything a non-developer needs to change lives in this file.
+# ---------------------------------------------------------------
+title: "CheapFly.ca"
+tagline: "Canada's cheap-flight playbook"
+description: >-
+  Free cheap-flight deal alerts from 16 Canadian airports, price-watch targets,
+  one-click flight search across every major engine, travel-hacking guides and
+  free tools that help Canadians fly for less.
+domain: "cheapfly.ca"
+production_url: "https://cheapfly.ca"
+lang: "en-CA"
+locale: "en_CA"
+author: "CheapFly Travel Desk"
+timezone: "America/Toronto"
+
+# NOTE: `url` and `baseurl` are intentionally NOT set. GitHub Pages fills them
+# automatically: "/cheapfly-ca" on webworksa1.github.io and "" once the
+# cheapfly.ca custom domain is connected. Every internal link uses relative_url.
+
+# --- Monetization ------------------------------------------------
+adsense:
+  client: "ca-pub-6620975821265271"
+  # Optional manual ad units. Auto ads work with no slot IDs. After approval,
+  # create display units in AdSense and paste their data-ad-slot numbers here.
+  slots:
+    top: ""
+    incontent: ""
+    sidebar: ""
+    bottom: ""
+
+# Optional Google Analytics 4 measurement ID (e.g. "G-XXXXXXX"). Empty = off.
+analytics:
+  ga4: ""
+
+# --- Top bar (every page) ------------------------------------------
+contact_cta_url: "https://web.works/contact"
+
+# --- Forms ---------------------------------------------------------
+# Forms post to FormSubmit (free). The owner inbox is never written in the HTML.
+# After the first submission, FormSubmit emails an activation link; once
+# activated it shows a random alias — paste it below for maximum privacy.
+forms:
+  provider: "https://formsubmit.co/ajax/"
+  alias: ""
+
+# --- Donations / support ------------------------------------------
+# Paste any payment links you create; buttons appear automatically.
+donate:
+  paypal: ""        # e.g. https://www.paypal.com/donate/?hosted_button_id=XXXX
+  stripe: ""        # Stripe Payment Link, e.g. https://buy.stripe.com/XXXX
+  kofi: ""          # e.g. https://ko-fi.com/yourname
+  buymeacoffee: ""  # e.g. https://buymeacoffee.com/yourname
+
+# --- Social ----------------------------------------------------------
+social:
+  youtube: ""
+  instagram: ""
+  tiktok: ""
+  facebook: ""
+  x: ""
+
+# --- Build -------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  toc_levels: "2..3"
+permalink: pretty
+
+collections:
+  guides:
+    output: true
+    permalink: /guides/:name/
+  airports:
+    output: true
+    permalink: /airports/:name/
+  destinations:
+    output: true
+    permalink: /destinations/:name/
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: "page", ads: true }
+  - scope: { path: "tools" }
+    values: { tool: true }
+  - scope: { path: "", type: "guides" }
+    values: { layout: "guide", schema_type: "Article" }
+  - scope: { path: "", type: "airports" }
+    values: { layout: "airport" }
+  - scope: { path: "", type: "destinations" }
+    values: { layout: "destination" }
+
+exclude:
+  - docs
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - "*.py"

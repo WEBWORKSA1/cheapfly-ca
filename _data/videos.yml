@@ -1,0 +1,25 @@
+# Curated YouTube videos for /videos/ (schema below).
+#
+# STATUS 2026-11-01: EMPTY ON PURPOSE. No video IDs could be verified in this research session.
+#  - WebFetch could not resolve any external host. The agent proxy denied www.youtube.com, so the
+#    oEmbed check (https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=ID&format=json)
+#    could not run.
+#  - The shared web-search budget ran out before candidates could be collected.
+# Video IDs written from memory are not trustworthy, so none were added. The list must contain
+# only IDs that pass the oEmbed check, which needs JSON back with "title" and "author_name".
+#
+# To fill this later (in a session where youtube.com is reachable):
+#   1. Find candidates (2023–2026, reputable channels) for each category: Google Flights tutorials,
+#      error fares, carry-on-only packing, Aeroplan basics, layover/airport tips, budget destination
+#      guides, Canadian passenger rights (APPR) explainers from Canadian news outlets or the CTA.
+#   2. Verify each one:
+#      curl -s "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=VIDEO_ID&format=json"
+#   3. Copy title and author_name exactly from the JSON.
+#
+# Schema (one item per video):
+# - id: "11-char-id"
+#   title: "Exact title from oEmbed"
+#   channel: "author_name from oEmbed"
+#   category: "Cheap flight hacks"   # Cheap flight hacks | Tools & tutorials | Packing & airports | Points & rewards | Passenger rights | Destinations
+#   guide: "how-to-find-cheap-flights-from-canada"   # matching guide slug, or ""
+[]

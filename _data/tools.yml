@@ -1,0 +1,36 @@
+- slug: flight-search
+  name: "Multi-Engine Flight Search"
+  short: "Search Google Flights, Skyscanner, KAYAK, Expedia and Momondo in one click."
+  icon: search
+- slug: flight-delay-compensation
+  name: "Flight Delay Compensation Calculator"
+  short: "Estimate what Canada's passenger-rights rules say you are owed for a delay or bump."
+  icon: shield
+- slug: best-time-to-book
+  name: "Best Time to Book Advisor"
+  short: "Get a personal booking window and a watch-and-book timeline for your trip."
+  icon: calendar
+- slug: trip-budget
+  name: "Trip Budget Planner"
+  short: "Total your trip in CAD and see how much to save each month."
+  icon: calculator
+- slug: flight-distance
+  name: "Flight Distance & Time Calculator"
+  short: "Great-circle distance, estimated flight time and CO2 between 150+ airports."
+  icon: globe
+- slug: points-value
+  name: "Points Value Calculator"
+  short: "Find out if an award ticket is a good use of your Aeroplan or other points."
+  icon: star
+- slug: carry-on-checker
+  name: "Carry-On Size Checker"
+  short: "Enter your bag's size and see which airlines will let it on board."
+  icon: suitcase
+- slug: currency-converter
+  name: "Travel Currency Converter"
+  short: "Convert CAD to 30+ travel currencies with daily reference rates."
+  icon: currency
+- slug: airport-codes
+  name: "Airport Code Finder"
+  short: "Look up IATA codes for Canadian and popular international airports."
+  icon: pin
